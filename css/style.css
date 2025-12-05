@@ -1,9 +1,11 @@
 /* --- 1. RESET E VARIÁVEIS --- */
 :root {
-    --primary: #004528;      /* Verde Loteria Oficial */
+    --primary: #004528;      /* Old Green (Fallback) */
+    --header-bg: #0050A4;    /* NOVO: Azul primário para o Header */
+    --accent: #FF9800;       /* NOVO: Laranja/Amarelo do logo */
     --primary-dark: #002b18;
-    --gold: #ffc107;         /* Amarelo Ouro */
-    --gold-grad: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+    --gold: var(--accent);   /* Ouro agora usa a nova cor de destaque */
+    --gold-grad: linear-gradient(135deg, var(--accent) 0%, #ff9800 100%);
     --white: #ffffff;
     --gray-light: #f4f6f8;
     --text: #333;
@@ -25,14 +27,13 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
 ul { list-style: none; }
 button { cursor: pointer; border: none; outline: none; }
 
-/* --- CSS DO POP-UP DE IDADE (INÍCIO) --- */
+/* O OVERLAY deve cobrir 100% para bloquear a interação */
 .age-popup-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-color: #003780; /* Azul escuro */
+    height: 100%; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,11 +48,16 @@ button { cursor: pointer; border: none; outline: none; }
     visibility: visible;
 }
 
+/* O CONTEÚDO agora é um modal BOX */
 .age-popup-content {
-    padding: 30px;
+    background-color: rgba(0, 55, 116, 0.95); /* Semi-transparente do azul escuro */
+    padding: 40px;
     text-align: center;
     color: white;
-    max-width: 90%;
+    max-width: 450px; /* Largura máxima definida para ser pequeno */
+    width: 90%; /* Garante responsividade */
+    border-radius: 12px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7); /* Sombra forte para efeito modal */
 }
 
 .age-popup-content h2 {
@@ -85,9 +91,9 @@ button { cursor: pointer; border: none; outline: none; }
 }
 
 .btn-yes {
-    background-color: #ffc107; /* Amarelo ouro */
+    background-color: var(--accent); 
     color: #002b18; 
-    border: 2px solid #ffc107;
+    border: 2px solid var(--accent);
 }
 
 @media (max-width: 500px) {
@@ -103,19 +109,21 @@ button { cursor: pointer; border: none; outline: none; }
 
 /* --- 2. TOPO FIXO --- */
 #fixed-header-container {
+    background: #7B6D3B;
     position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
     display: flex; flex-direction: column; 
     box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
 .ticker-wrap {
-    height: 45px; background: var(--white); 
+    height: 45px; background: #DAB85C; 
     display: flex; align-items: center; position: relative; 
-    overflow: hidden; border-bottom: 1px solid #eee;
+    overflow: hidden; border-bottom: 1px solid #DAB85C;
 }
 
 .ticker-heading {
-    background: var(--gold); color: var(--primary-dark);
+    background: var(--accent); /* Usa a nova cor de destaque */
+    color: var(--primary-dark);
     height: 100%; display: flex; align-items: center; padding: 0 20px;
     font-weight: 800; font-size: 0.85rem; z-index: 2;
     box-shadow: 2px 0 10px rgba(0,0,0,0.1);
@@ -140,7 +148,8 @@ button { cursor: pointer; border: none; outline: none; }
 }
 
 header {
-    background: var(--primary); height: 75px; 
+    background: #DAB85C; /* NOVO: Fundo azul */
+    height: 75px; 
     display: flex; align-items: center; padding: 0 5%;
     position: relative; z-index: 1; margin-top: 0;
 }
@@ -150,16 +159,25 @@ header {
     display: flex; justify-content: space-between; align-items: center;
 }
 
-.logo { display: flex; align-items: center; gap: 10px; color: white; }
-.logo i { font-size: 2rem; color: var(--gold); }
-.logo-text { font-weight: 700; line-height: 1.1; font-size: 1rem; text-align: left; }
+/* NOVO ESTILO DO LOGO (IMAGEM) */
+.logo { 
+    display: flex; 
+    align-items: center; 
+    /* Remove o gap e a cor de texto pois usa a imagem */
+}
+.new-logo-img {
+    height: 55px; /* Altura ajustada para o novo logo */
+    width: auto;
+}
+/* FIM NOVO ESTILO DO LOGO */
 
 .desktop-nav { display: none; gap: 30px; }
 .desktop-nav a { color: rgba(255,255,255,0.8); font-weight: 500; font-size: 0.95rem; position: relative; }
 .desktop-nav a:hover { color: white; }
 .desktop-nav a::after {
     content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px;
-    background: var(--gold); transition: 0.3s;
+    background: var(--accent); /* Usa a nova cor de destaque */
+    transition: 0.3s;
 }
 .desktop-nav a:hover::after { width: 100%; }
 
@@ -172,14 +190,19 @@ header {
 
 /* --- 3. HERO SECTION (APLICANDO O BACKGROUND) --- */
 .hero {
-    /* Camada 1: Imagem, centralizada, cobrindo, sem repetição. */
-    background: url() center bottom / cover no-repeat, 
-    /* Camada 2: Gradiente (Fallback principal se a imagem falhar) */
+    /* Camada 1: Imagem, centralizada, cabendo inteira */
+    background: url('../bannercaixa\ \(1\).jpg') center center / cover no-repeat, 
+    /* Fallback é o gradiente verde */
                 linear-gradient(135deg, #004528 0%, #002b18 100%); 
     
-    color: white; padding: 3rem 5%; min-height: 550px;
-    display: flex; align-items: center; justify-content: center;
-    position: relative; overflow: hidden;
+    color: white; 
+    padding: 3rem 5%; 
+    min-height: 900px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    position: relative; 
+    overflow: hidden;
 }
 
 .hero-container {
@@ -191,13 +214,21 @@ header {
 .hero-content { max-width: 600px; width: 100%; }
 
 .badge-hero {
-    background: var(--gold); color: var(--primary-dark); padding: 5px 15px;
-    border-radius: 20px; font-weight: 800; font-size: 0.8rem;
-    display: inline-block; margin-bottom: 15px; letter-spacing: 1px;
+    background: var(--accent); /* Usa a nova cor de destaque */
+    color: var(--primary-dark); 
+    padding: 5px 15px;
+    border-radius: 20px; 
+    font-weight: 800; 
+    font-size: 0.8rem;
+    display: inline-block; 
+    margin-bottom: 15px; 
+    letter-spacing: 1px;
 }
 
 .hero h1 { font-size: 3rem; line-height: 1; font-weight: 800; margin-bottom: 20px; color: white; }
-.text-gold { color: var(--gold); text-shadow: 0 0 25px rgba(255, 193, 7, 0.5); }
+.text-gold { color: var(--accent); /* Usa a nova cor de destaque */
+    text-shadow: 0 0 25px rgba(255, 152, 0, 0.5); /* Sombra ajustada para o novo tom */
+}
 
 .hero-price-wrapper p { font-size: 1rem; opacity: 0.9; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
 .big-price { font-size: 3rem; font-weight: 800; color: var(--white); margin-bottom: 20px; line-height: 1; }
@@ -205,12 +236,19 @@ header {
 .hero-desc { font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px; line-height: 1.6; max-width: 500px; }
 
 .btn-hero {
-    background: var(--gold-grad); color: var(--primary-dark);
-    padding: 16px 40px; border-radius: 50px; font-weight: 800; font-size: 1.1rem;
-    display: inline-flex; align-items: center; gap: 10px;
-    box-shadow: 0 10px 25px rgba(255, 193, 7, 0.3); transform: scale(1);
+    background: var(--gold-grad); 
+    color: var(--primary-dark);
+    padding: 16px 40px; 
+    border-radius: 50px; 
+    font-weight: 800; 
+    font-size: 1.1rem;
+    display: inline-flex; 
+    align-items: center; 
+    gap: 10px;
+    box-shadow: 0 10px 25px rgba(255, 152, 0, 0.3); 
+    transform: scale(1);
 }
-.btn-hero:hover { transform: scale(1.05); box-shadow: 0 15px 35px rgba(255, 193, 7, 0.5); }
+.btn-hero:hover { transform: scale(1.05); box-shadow: 0 15px 35px rgba(255, 152, 0, 0.5); }
 
 .hero-security { margin-top: 15px; font-size: 0.85rem; opacity: 0.7; }
 
@@ -259,13 +297,13 @@ header {
 
 /* Paginação (Bolinhas) */
 .swiper-pagination-bullet { background: var(--primary); opacity: 0.3; width: 10px; height: 10px; }
-.swiper-pagination-bullet-active { opacity: 1; background: var(--gold); width: 20px; border-radius: 5px; }
+.swiper-pagination-bullet-active { opacity: 1; background: var(--accent); width: 20px; border-radius: 5px; }
 
 /* --- 5. EXTRAS --- */
 .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 2rem; text-align: center; }
 .step { padding: 1rem; }
 .icon-circle {
-    width: 70px; height: 70px; background: #e8f5e9; color: var(--primary);
+    width: 70px; height: 70px; background: #e8f5e9; color: var(--header-bg); /* Usa o novo azul */
     border-radius: 50%; display: flex; align-items: center; justify-content: center;
     font-size: 1.8rem; margin: 0 auto 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
@@ -299,6 +337,9 @@ footer { background: #1a1a1a; color: #888; text-align: center; padding: 3rem 2re
     .big-price { font-size: 2.2rem; }
     .btn-header span { display: none; }
     .btn-header { padding: 0; width: 40px; height: 40px; justify-content: center; }
+    
+    /* Ajuste para mobile se 750px for muito alto */
+    .hero { min-height: 500px; }
 }
 
 /* DESKTOP (A partir de 1024px) */
@@ -319,7 +360,8 @@ footer { background: #1a1a1a; color: #888; text-align: center; padding: 3rem 2re
         padding: 40px; text-align: center; transform: rotate(-5deg);
         box-shadow: 0 20px 50px rgba(0,0,0,0.3); color: white;
     }
-    .ticket-visual strong { display: block; font-size: 5rem; line-height: 1; color: var(--gold); text-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+    .ticket-visual strong { display: block; font-size: 5rem; line-height: 1; color: var(--accent); /* Usa a nova cor de destaque */
+        text-shadow: 0 4px 10px rgba(0,0,0,0.3); }
     .ticket-visual small { font-size: 1.5rem; letter-spacing: 2px; text-transform: uppercase; }
     .ticket-footer { margin-top: 20px; background: white; color: var(--primary); padding: 10px; border-radius: 50px; font-weight: 800; }
 
