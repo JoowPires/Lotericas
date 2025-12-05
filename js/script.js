@@ -14,6 +14,39 @@ const allGames = [
     { name: "Dia de Sorte", value: "R$ 300 MIL", color: "#cb852b", textColor: "white", desc: "Aposte nos seus números da sorte e no seu mês favorito." }
 ];
 
+// VARIÁVEL GLOBAL PARA A INSTÂNCIA DO SWIPER
+let swiperInstance = null;
+
+// FUNÇÃO RESPONSÁVEL POR INICIALIZAR O SWIPER (APENAS MOBILE)
+function setupSwiper() {
+    // Evita inicializar duas vezes
+    if (swiperInstance) {
+        swiperInstance.update();
+        return;
+    }
+    
+    // Inicializa o Swiper (agora com efeito Coverflow)
+    swiperInstance = new Swiper(".swiperJogos", {
+        effect: "coverflow", 
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto", 
+        loop: true,
+        coverflowEffect: { 
+            rotate: 40,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            dynamicBullets: true,
+        },
+    });
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
     
     // =======================================================
@@ -24,15 +57,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnNo = document.getElementById('btnNo');
     const isAgeConfirmed = sessionStorage.getItem('ageConfirmed');
     
+    // Se não está confirmado, mostra o pop-up e trava a rolagem
     if (!isAgeConfirmed) {
         agePopup.classList.add('active');
         document.body.style.overflow = 'hidden'; 
+    } else {
+        // SE A IDADE JÁ ESTIVER CONFIRMADA, INICIA O SWIPER IMEDIATAMENTE.
+        setupSwiper();
     }
 
     btnYes.addEventListener('click', () => {
         agePopup.classList.remove('active');
         sessionStorage.setItem('ageConfirmed', 'true');
-        document.body.style.overflow = '';
+        document.body.style.overflow = ''; 
+        
+        // APÓS O CLIENTE CLICAR 'SIM', INICIA O SWIPER.
+        setupSwiper();
     });
 
     btnNo.addEventListener('click', () => {
@@ -97,30 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Adiciona ao DOM
         desktopContainer.appendChild(desktopFragment);
         swiperContainer.appendChild(swiperFragment);
-        
-
-        // --- 3. INICIALIZAÇÃO DO SWIPER (NA ESTRUTURA MOBILE) ---
-        var swiper = new Swiper(".swiperJogos", {
-            effect: "coverflow", // <<< EFEITO COVERFLOW REATIVADO
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: "auto", // Importante para o efeito de peek/overflow
-            loop: true,
-            coverflowEffect: { // <<< CONFIGURAÇÃO DO EFEITO 3D
-                rotate: 40,
-                stretch: 0,
-                depth: 100,
-                modifier: 1,
-                slideShadows: true,
-            },
-            
-            pagination: {
-                el: ".swiper-pagination",
-                dynamicBullets: true,
-            },
-        });
     }
-
+    
     // --- 4. LINKS WHATSAPP ---
     document.querySelectorAll('.btn-whatsapp-geral').forEach(btn => {
         btn.href = `https://wa.me/${whatsappNumber}?text=Olá! Vim pelo site da Lotérica Country Club e gostaria de atendimento.`;
