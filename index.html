@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lotérica Country Club | Mega da Virada</title>
+    <meta name="theme-color" content="#004528">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" />
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="agePopup" class="age-popup-overlay">
+        <div class="age-popup-content">
+            <h2>Você tem mais de 18 anos?</h2>
+            <div class="age-popup-buttons">
+                <button id="btnNo" class="btn-age btn-no">Não</button>
+                <button id="btnYes" class="btn-age btn-yes">Sim</button>
+            </div>
+        </div>
+    </div>
+    <div id="fixed-header-container">
+        <div class="ticker-wrap">
+            <div class="ticker-heading">ACUMULADOS:</div>
+            <div class="ticker-track" id="ticker-content">
+                </div>
+        </div>
+
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-clover"></i> 
+                    <div class="logo-text">
+                        Lotérica<br>Country Club
+                    </div>
+                </div>
+
+                <nav class="desktop-nav">
+                    <a href="#hero">Início</a>
+                    <a href="#games">Jogos</a>
+                    <a href="#how-it-works">Como Funciona</a>
+                </nav>
+
+                <a href="#" class="btn-header btn-whatsapp-geral">
+                    <i class="fab fa-whatsapp"></i> <span>Atendimento</span>
+                </a>
+            </div>
+        </header>
+    </div> 
+
+    <section class="hero" id="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="badge-hero">🏆 O MAIOR DO ANO</div>
+                <h1>MEGA DA <br><span class="text-gold">VIRADA</span></h1>
+                
+                <div class="hero-price-wrapper">
+                    <p>Prêmio Estimado:</p>
+                    <div class="big-price">R$ 850 MILHÕES</div>
+                </div>
+                
+                <p class="hero-desc">Não deixe a sorte passar. Garanta as melhores cotas e bolões estratégicos agora mesmo.</p>
+                
+                <a href="#" class="btn-hero btn-whatsapp-virada">
+                    GARANTIR MEU BOLÃO <i class="fas fa-chevron-right"></i>
+                </a>
+                <p class="hero-security"><i class="fas fa-lock"></i> Compra 100% Segura via WhatsApp</p>
+            </div>
+
+            <div class="hero-visual">
+                <div class="ticket-visual">
+                    <div class="ticket-header">
+                        <span>31 DEZEMBRO</span>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="ticket-body">
+                        <strong>R$ 850</strong>
+                        <small>MILHÕES</small>
+                    </div>
+                    <br/>
+                    <a href="#" class="ticket-footer btn-whatsapp-virada">
+                        JOGUE AGORA
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="daily-games" id="games">
+        <div class="container">
+            <div class="section-title">
+                <h2>🎲 Nossos Bolões</h2>
+                <p>Arraste para o lado e escolha sua sorte.</p>
+            </div>
+            
+            <div id="desktop-games-container">
+                <div class="games-grid" id="games-container">
+                    </div>
+            </div>
+
+            <div id="mobile-games-container" class="mobile-slider-view">
+                <div class="swiper swiperJogos">
+                    <div class="swiper-wrapper" id="swiper-games-container">
+                        </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>✅ Como Funciona o Jogo?</h2>
+            </div>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="icon-circle"><i class="fas fa-hand-pointer"></i></div>
+                    <h3>1. Escolha sua Sorte 🍀</h3>
+                    <p>Selecione um de nossos bolões estratégicos. Nossos bolões aumentam suas **chances de ganhar** sem custar uma fortuna. Escolha o jogo (Mega, Lotofácil, etc.) e a cota.</p>
+                </div>
+                <div class="step">
+                    <div class="icon-circle"><i class="fab fa-whatsapp"></i></div>
+                    <h3>2. Chame no WhatsApp 📲</h3>
+                    <p>Ao clicar no botão "Apostar Agora", você será direcionado para o nosso **Atendimento Exclusivo**. Nossa equipe confirma o bolão escolhido e tira qualquer dúvida que você possa ter na hora.</p>
+                </div>
+                <div class="step">
+                    <div class="icon-circle"><i class="fas fa-qrcode"></i></div>
+                    <h3>3. Pague com Pix Rápido 💳</h3>
+                    <p>Gere o **Pix** para pagamento. É rápido, fácil e seguro. Assim que o pagamento for confirmado, você receberá a garantia de participação. Não perca tempo!</p>
+                </div>
+                <div class="step">
+                    <div class="icon-circle"><i class="fas fa-ticket-alt"></i></div>
+                    <h3>4. Receba o Comprovante 🧾</h3>
+                    <p>Você receberá imediatamente o **comprovante oficial** do seu bolão. Pronto! Suas apostas estarão registradas e garantidas para o próximo sorteio. É só cruzar os dedos! 🙏</p>
+                </div>
+            </div>
+            <p class="security-note">**Nota:** Todos os bolões são registrados em Lotérica Credenciada da Caixa e gerenciados por nossa equipe.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Lotérica Country Club. Jogue com responsabilidade.</p>
+    </footer>
+
+    <a href="#" class="float-btn btn-whatsapp-geral"><i class="fab fa-whatsapp"></i></a>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const agePopup = document.getElementById('agePopup');
+            const btnYes = document.getElementById('btnYes');
+            const btnNo = document.getElementById('btnNo');
+            const isAgeConfirmed = sessionStorage.getItem('ageConfirmed');
+            
+            if (!isAgeConfirmed) {
+                agePopup.classList.add('active');
+                document.body.style.overflow = 'hidden'; 
+            }
+
+            btnYes.addEventListener('click', () => {
+                agePopup.classList.remove('active');
+                sessionStorage.setItem('ageConfirmed', 'true');
+                document.body.style.overflow = '';
+            });
+
+            btnNo.addEventListener('click', () => {
+                alert("Desculpe, este site é apenas para maiores de 18 anos.");
+            });
+        });
+    </script>
+</body>
+</html>
