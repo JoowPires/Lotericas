@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Lotérica Country Club | Mega da Virada</title>
-    <meta name="theme-color" content="#004528">
+    <meta name="theme-color" content="#005CA9">
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -24,30 +22,58 @@
             </div>
         </div>
     </div>
+
     <div id="fixed-header-container">
-        <div class="ticker-wrap">
-            <div class="ticker-heading">ACUMULADOS:</div>
-            <div class="ticker-track" id="ticker-content">
-                </div>
+        
+        <div class="image-marquee-wrap">
+            <div class="image-marquee-track">
+                <i class="fas fa-star" style="color: gold;"></i> <span>MEGA DA VIRADA</span>
+                <i class="fas fa-money-bill-wave" style="color: lightgreen;"></i> <span>BOLÕES EXCLUSIVOS</span>
+                <i class="fab fa-whatsapp" style="color: white;"></i> <span>ATENDIMENTO VIP</span>
+                <i class="fas fa-check-circle" style="color: cyan;"></i> <span>JOGOS REGISTRADOS</span>
+                <i class="fas fa-star" style="color: gold;"></i> <span>R$ 600 MILHÕES</span>
+                <i class="fas fa-star" style="color: gold;"></i> <span>MEGA DA VIRADA</span>
+                <i class="fas fa-money-bill-wave" style="color: lightgreen;"></i> <span>BOLÕES EXCLUSIVOS</span>
+                <i class="fab fa-whatsapp" style="color: white;"></i> <span>ATENDIMENTO VIP</span>
+                <i class="fas fa-check-circle" style="color: cyan;"></i> <span>JOGOS REGISTRADOS</span>
+                <i class="fas fa-star" style="color: gold;"></i> <span>R$ 600 MILHÕES</span>
+            </div>
         </div>
 
         <header>
             <div class="header-content">
                 <div class="logo logo-img-container">
-                    <img src="logo.png" alt="Lotérica Country Club Logo" class="new-logo-img">
+                    <img src="logo.png" alt="Lotérica Logo" class="new-logo-img">
                 </div>
 
                 <nav class="desktop-nav">
                     <a href="#hero">Início</a>
-                    <a href="#games">Jogos</a>
-                    <a href="#how-it-works">Como Funciona</a>
+                    <a href="#mega-boloes">Bolões Mega</a>
+                    <a href="#daily-games">Jogos do Dia</a>
+                    <a href="#reviews">Avaliações</a>
+                    <a href="#about-location">Contato</a>
                 </nav>
 
-                <a href="#" class="btn-header btn-whatsapp-geral">
-                    <i class="fab fa-whatsapp"></i> <span>Atendimento</span>
+                <button class="mobile-menu-toggle" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <a href="#" class="btn-header btn-whatsapp-geral desktop-only">
+                    <i class="fab fa-whatsapp"></i> <span>(11) 99999-9999</span>
                 </a>
             </div>
         </header>
+
+        <div class="mobile-menu-dropdown" id="mobileMenuDropdown">
+            <a href="#hero" class="mobile-link">Início</a>
+            <a href="#mega-boloes" class="mobile-link">Bolões da Virada</a>
+            <a href="#daily-games" class="mobile-link">Jogos do Dia</a>
+            <a href="#reviews" class="mobile-link">Depoimentos</a>
+            <a href="#about-location" class="mobile-link">Localização</a>
+            <a href="#" class="mobile-link highlight btn-whatsapp-geral">
+                <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+            </a>
+        </div>
     </div> 
 
     <section class="hero" id="hero">
@@ -61,12 +87,12 @@
                     <div class="big-price">R$ 600 MILHÕES</div>
                 </div>
                 
-                <p class="hero-desc">Não deixe a sorte passar. Garanta as melhores cotas e bolões estratégicos agora mesmo.</p>
+                <p class="hero-desc">Garanta agora seu bolão estratégico. Não deixe para a última hora!</p>
                 
                 <a href="#" class="btn-hero btn-whatsapp-virada">
-                    GARANTIR MEU BOLÃO <i class="fas fa-chevron-right"></i>
+                    <i class="fab fa-whatsapp"></i> GARANTIR COTAS
                 </a>
-                <p class="hero-security"><i class="fas fa-lock"></i> Compra 100% Segura via WhatsApp</p>
+                <p class="hero-security"><i class="fas fa-lock"></i> Compra 100% Segura</p>
             </div>
 
             <div class="hero-visual">
@@ -80,28 +106,40 @@
                         <small>MILHÕES</small>
                     </div>
                     <a href="#" class="ticket-footer btn-whatsapp-virada">
-                        JOGUE AGORA
+                        APOSTAR AGORA
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="daily-games" id="games">
+    <section class="mega-boloes-section" id="mega-boloes">
         <div class="container">
             <div class="section-title">
-                <h2>🎲 Nossos Bolões</h2>
-                <p>Arraste para o lado e escolha sua sorte.</p>
+                <h2>✨ Bolões Especiais</h2>
+                <p>Estratégias exclusivas para a Mega da Virada.</p>
             </div>
             
+            <div class="mega-grid" id="mega-boloes-container">
+                </div>
+        </div>
+    </section>
+
+    <section class="daily-games" id="daily-games">
+        <div class="container">
+            <div class="section-title">
+                <h2>🎲 Jogos do Dia</h2>
+                <p>Outras oportunidades para hoje.</p>
+            </div>
+
             <div id="desktop-games-container">
-                <div class="games-grid" id="games-container">
+                <div class="games-grid" id="daily-games-grid">
                     </div>
             </div>
 
             <div id="mobile-games-container" class="mobile-slider-view">
                 <div class="swiper swiperJogos">
-                    <div class="swiper-wrapper" id="swiper-games-container">
+                    <div class="swiper-wrapper" id="swiper-daily-wrapper">
                         </div>
                     <div class="swiper-pagination"></div>
                 </div>
@@ -109,34 +147,47 @@
         </div>
     </section>
 
-    <section class="how-it-works" id="how-it-works">
+    <section class="reviews-section" id="reviews">
         <div class="container">
             <div class="section-title">
-                <h2>✅ Como Funciona o Jogo?</h2>
+                <h2>⭐ Clientes Satisfeitos</h2>
             </div>
-            <div class="steps-grid">
-                <div class="step">
-                    <div class="icon-circle"><i class="fas fa-hand-pointer"></i></div>
-                    <h3>1. Escolha sua Sorte 🍀</h3>
-                    <p>Selecione um de nossos bolões estratégicos. Nossos bolões aumentam suas **chances de ganhar** sem custar uma fortuna. Escolha o jogo (Mega, Lotofácil, etc.) e a cota.</p>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>"Melhor lugar para fazer bolão! Atendimento rápido no WhatsApp."</p>
+                    <strong>Ricardo Silva</strong>
                 </div>
-                <div class="step">
-                    <div class="icon-circle"><i class="fab fa-whatsapp"></i></div>
-                    <h3>2. Chame no WhatsApp 📲</h3>
-                    <p>Ao clicar no botão "Apostar Agora", você será direcionado para o nosso **Atendimento Exclusivo**. Nossa equipe confirma o bolão escolhido e tira qualquer dúvida que você possa ter na hora.</p>
+                <div class="review-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>"Transparência total. Recebi meu comprovante na hora. Recomendo!"</p>
+                    <strong>Ana Paula</strong>
                 </div>
-                <div class="step">
-                    <div class="icon-circle"><i class="fas fa-qrcode"></i></div>
-                    <h3>3. Pague com Pix Rápido 💳</h3>
-                    <p>Gere o **Pix** para pagamento. É rápido, fácil e seguro. Assim que o pagamento for confirmado, você receberá a garantia de participação. Não perca tempo!</p>
-                </div>
-                <div class="step">
-                    <div class="icon-circle"><i class="fas fa-ticket-alt"></i></div>
-                    <h3>4. Receba o Comprovante 🧾</h3>
-                    <p>Você receberá imediatamente o **comprovante oficial** do seu bolão. Pronto! Suas apostas estarão registradas e garantidas para o próximo sorteio. É só cruzar os dedos! 🙏</p>
+                <div class="review-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>"Já ganhei na quadra com eles. Confiança é tudo."</p>
+                    <strong>Marcos Oliveira</strong>
                 </div>
             </div>
-            <p class="security-note">**Nota:** Todos os bolões são registrados em Lotérica Credenciada da Caixa e gerenciados por nossa equipe.</p>
+        </div>
+    </section>
+
+    <section class="about-section" id="about-location">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-info">
+                    <h3>🏢 Quem Somos</h3>
+                    <p>A <strong>Lotérica Country Club</strong> é credenciada oficial CAIXA. Atuamos com seriedade para levar a sorte até você através de bolões inteligentes.</p>
+                    <a href="#" class="btn-outline btn-whatsapp-geral">Fale Conosco</a>
+                </div>
+                <div class="about-map">
+                    <h3>📍 Localização</h3>
+                    <div class="map-placeholder">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975!2d-46.6!3d-23.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzAwLjAiUyA0NsKwMzYnMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1600000000000!5m2!1spt-BR!2sbr" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <p>Av. Principal, 100 - Centro, Cidade - SP</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -148,29 +199,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const agePopup = document.getElementById('agePopup');
-            const btnYes = document.getElementById('btnYes');
-            const btnNo = document.getElementById('btnNo');
-            const isAgeConfirmed = sessionStorage.getItem('ageConfirmed');
-            
-            if (!isAgeConfirmed) {
-                agePopup.classList.add('active');
-                document.body.style.overflow = 'hidden'; 
-            }
-
-            btnYes.addEventListener('click', () => {
-                agePopup.classList.remove('active');
-                sessionStorage.setItem('ageConfirmed', 'true');
-                document.body.style.overflow = '';
-            });
-
-            btnNo.addEventListener('click', () => {
-                alert("Desculpe, este site é apenas para maiores de 18 anos.");
-            });
-        });
-    </script>
 </body>
 </html>

@@ -1,9 +1,9 @@
-/* --- 1. RESET E VARIÁVEIS (ESQUEMA VERDE/DOURADO) --- */
+/* --- 1. RESET E VARIÁVEIS --- */
 :root {
-    --primary: #004528;      /* Verde Loteria Oficial (Cor Principal) */
-    --primary-dark: #002b18; /* Verde Escuro */
-    --gold: #ffc107;         /* Amarelo Ouro */
-    --gold-grad: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+    --primary: #005CA9;      /* Azul */
+    --primary-dark: #002b18; /* Verde Escuro (Fallback) */
+    --gold: #F39200;         /* Laranja */
+    --gold-grad: linear-gradient(135deg, #F39200 0%, #ffc107 100%);
     --white: #ffffff;
     --gray-light: #f4f6f8;
     --text: #333;
@@ -16,7 +16,7 @@
 body { 
     background-color: var(--gray-light); 
     color: var(--text); 
-    padding-top: 120px; 
+    padding-top: 115px; /* Ajuste para o header + faixa */
     line-height: 1.5;
     overflow-x: hidden; 
 }
@@ -25,136 +25,42 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
 ul { list-style: none; }
 button { cursor: pointer; border: none; outline: none; }
 
-/* --- CSS DO POP-UP DE IDADE (INÍCIO) --- */
-
-/* O OVERLAY deve cobrir 100% para bloquear a interação */
+/* --- POP-UP IDADE --- */
 .age-popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; 
-    background-color: rgba(0, 70, 40, 0.95); /* Overlay Verde Escuro */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+    background-color: rgba(0, 92, 169, 0.95); /* Azul Opaco */
+    display: flex; justify-content: center; align-items: center;
+    z-index: 9999; opacity: 0; visibility: hidden; transition: 0.3s;
 }
+.age-popup-overlay.active { opacity: 1; visibility: visible; }
+.age-popup-content { background: white; padding: 40px; border-radius: 15px; text-align: center; max-width: 90%; width: 400px; color: var(--text); }
+.age-popup-buttons { display: flex; gap: 15px; justify-content: center; margin-top: 20px; }
+.btn-age { padding: 10px 30px; border-radius: 5px; font-weight: bold; border: 2px solid var(--primary); }
+.btn-no { background: transparent; color: var(--primary); }
+.btn-yes { background: var(--primary); color: white; }
 
-.age-popup-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* O CONTEÚDO agora é um modal BOX */
-.age-popup-content {
-    background-color: var(--primary); /* Fundo sólido para a caixa (Verde Escuro) */
-    padding: 40px;
-    text-align: center;
-    color: white;
-    max-width: 450px; 
-    width: 90%; 
-    border-radius: 12px;
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7); 
-}
-
-.age-popup-content h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 40px;
-    line-height: 1.2;
-    text-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-
-.age-popup-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.btn-age {
-    padding: 15px 40px;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.1s;
-}
-
-.btn-no {
-    background-color: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.btn-yes {
-    background-color: var(--gold); 
-    color: var(--primary-dark); 
-    border: 2px solid var(--gold);
-}
-
-@media (max-width: 500px) {
-    .age-popup-content h2 {
-        font-size: 2rem;
-    }
-    .age-popup-buttons {
-        flex-direction: column;
-    }
-}
-/* --- CSS DO POP-UP DE IDADE (FIM) --- */
-
-
-/* --- 2. TOPO FIXO --- */
+/* --- TOPO FIXO E FAIXA --- */
 #fixed-header-container {
-    background: var(--primary); 
     position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-    display: flex; flex-direction: column; 
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
-.ticker-wrap {
-    background: #867137; 
-    height: 45px; 
-    display: flex; align-items: center; position: relative; 
-    overflow: hidden; border-bottom: 1px solid #867137;
+/* Faixa de Imagens (Marquee) */
+.image-marquee-wrap {
+    background: var(--primary); height: 40px; overflow: hidden; position: relative;
+    display: flex; align-items: center;
 }
-
-.ticker-heading {
-    background: #005CA9; 
-    color: var(--primary-dark);
-    height: 100%; display: flex; align-items: center; padding: 0 20px;
-    font-weight: 800; font-size: 0.85rem; z-index: 2;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-    white-space: nowrap;
-    border-radius: 0 25px  25px  0;
+.image-marquee-track {
+    display: flex; gap: 40px; animation: scroll 30s linear infinite; white-space: nowrap; padding-left: 20px;
+    align-items: center; color: white; font-weight: 700; font-size: 0.85rem;
 }
-
-.ticker-track {
-    display: flex; align-items: center; gap: 15px; padding-left: 20px;
-    animation: scroll 40s linear infinite; white-space: nowrap;
-}
+.image-marquee-track i { margin-right: 5px; font-size: 1rem; }
 @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-.ticker-pill {
-    display: flex; align-items: center; gap: 8px;
-    padding: 4px 5px 4px 12px; border-radius: 50px;
-    color: white; font-weight: 700; font-size: 0.75rem; text-transform: uppercase;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-.ticker-pill span {
-    background: white; color: #333; padding: 2px 8px;
-    border-radius: 12px; font-weight: 800; font-size: 0.7rem;
-}
-
 header {
-    background: #867137; 
-    height: 75px; 
+    background: white; height: 75px; 
     display: flex; align-items: center; padding: 0 5%;
-    position: relative; z-index: 1; margin-top: 0;
+    position: relative; z-index: 2;
 }
 
 .header-content {
@@ -162,247 +68,162 @@ header {
     display: flex; justify-content: space-between; align-items: center;
 }
 
-/* ESTILO DO LOGO */
-.logo { 
-    display: flex; 
-    align-items: center; 
-}
-.new-logo-img {
-    height: 55px; 
-    width: auto;
-}
-/* FIM NOVO ESTILO DO LOGO */
+.logo img { height: 50px; width: auto; }
 
-.desktop-nav { display: none; gap: 30px; }
-.desktop-nav a { color: rgba(255,255,255,0.8); font-weight: 500; font-size: 0.95rem; position: relative; }
-.desktop-nav a:hover { color: white; }
-.desktop-nav a::after {
-    content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px;
-    background: var(--gold); 
-    transition: 0.3s;
-}
-.desktop-nav a:hover::after { width: 100%; }
+/* Menu Desktop */
+.desktop-nav { display: none; gap: 25px; }
+.desktop-nav a { color: var(--primary); font-weight: 600; font-size: 0.95rem; }
+.desktop-nav a:hover { color: var(--gold); }
 
+/* Botão Header Desktop */
 .btn-header {
-    background: rgba(255,255,255,0.15); color: white; padding: 8px 20px;
-    border-radius: 50px; display: flex; align-items: center; gap: 8px;
-    font-weight: 600; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.2);
+    background: var(--gold); color: var(--primary); padding: 8px 25px;
+    border-radius: 50px; font-weight: 700; display: flex; align-items: center; gap: 8px;
 }
-.btn-header:hover { background: rgba(255,255,255,0.25); }
+.btn-header:hover { background: var(--primary); color: white; }
+.desktop-only { display: none; }
 
-/* --- 3. HERO SECTION (APLICANDO O BACKGROUND) --- */
+/* --- MENU MOBILE (ABAIXAR) --- */
+.mobile-menu-toggle {
+    font-size: 1.8rem; color: var(--primary); background: none;
+}
+.mobile-menu-dropdown {
+    background: white; width: 100%; position: absolute; top: 115px; left: 0;
+    flex-direction: column; padding: 0; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    max-height: 0; overflow: hidden; transition: max-height 0.4s ease-in-out;
+    z-index: 900; display: flex;
+}
+.mobile-menu-dropdown.open { max-height: 400px; } /* Altura suficiente para os links */
+.mobile-link {
+    padding: 15px 20px; border-bottom: 1px solid #f0f0f0; 
+    color: var(--primary); font-weight: 600;
+}
+.mobile-link.highlight { background: var(--whatsapp); color: white; text-align: center; justify-content: center; display: flex; gap: 8px; }
+
+/* --- HERO SECTION --- */
 .hero {
-    /* NOVIDADE: Adiciona a cor sólida para carregamento instantâneo */
     background-color: var(--primary-dark); 
-
-    /* Camada 1: Overlay (FILTRO DE COR) - MANTIDO */
-    background-image: 
-        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-    /* Camada 2: Imagem */
-        url('../bannercaixa\ \(1\).jpg');
-    
-    /* Configurações de fundo para a imagem e o overlay */
-    background-position: center center;
-    background-size: cover; 
-    background-repeat: no-repeat;
-    
-    
-    color: white; 
-    padding: 3rem 5%; 
-    min-height: 900px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-    position: relative; 
-    overflow: hidden;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../bannercaixa\ \(1\).jpg');
+    background-size: cover; background-position: center; background-attachment: fixed;
+    min-height: 800px; display: flex; align-items: center; justify-content: center;
+    padding: 3rem 5%; color: white;
 }
-
 .hero-container {
     width: 100%; max-width: 1200px; display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-    position: relative; z-index: 2;
+    flex-direction: column; align-items: center; gap: 40px;
 }
+.hero-content { max-width: 600px; text-align: center; } /* Mobile center */
 
-.hero-content { max-width: 600px; width: 100%; }
-
-.badge-hero {
-    background: var(--gold); 
-    color: var(--primary-dark); 
-    padding: 5px 15px;
-    border-radius: 20px; 
-    font-weight: 800; 
-    font-size: 0.8rem;
-    display: inline-block; 
-    margin-bottom: 15px; 
-    letter-spacing: 1px;
-}
-
-.hero h1 { font-size: 3rem; line-height: 1; font-weight: 800; margin-bottom: 20px; color: white; }
-.text-gold { color: var(--gold); 
-    text-shadow: 0 0 25px rgba(255, 193, 7, 0.5); 
-}
-
-.hero-price-wrapper p { font-size: 1rem; opacity: 0.9; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
-.big-price { font-size: 3rem; font-weight: 800; color: var(--white); margin-bottom: 20px; line-height: 1; }
-
-.hero-desc { font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px; line-height: 1.6; max-width: 500px; }
-
+.badge-hero { background: var(--gold); color: var(--primary); padding: 5px 15px; border-radius: 20px; font-weight: 800; display: inline-block; margin-bottom: 10px; }
+.hero h1 { font-size: 2.8rem; line-height: 1.1; font-weight: 800; margin-bottom: 15px; }
+.text-gold { color: var(--gold); }
+.big-price { font-size: 2.5rem; font-weight: 800; margin: 10px 0; color: var(--white); }
 .btn-hero {
-    background: var(--gold-grad); 
-    color: var(--primary-dark);
-    padding: 16px 40px; 
-    border-radius: 50px; 
-    font-weight: 800; 
-    font-size: 1.1rem;
-    display: inline-flex; 
-    align-items: center; 
-    gap: 10px;
-    box-shadow: 0 10px 25px rgba(255, 193, 7, 0.3); 
-    transform: scale(1);
+    background: var(--gold-grad); color: var(--primary); padding: 15px 35px;
+    border-radius: 50px; font-weight: 800; font-size: 1.1rem; display: inline-flex; gap: 10px;
+    margin-bottom: 10px;
 }
-.btn-hero:hover { transform: scale(1.05); box-shadow: 0 15px 35px rgba(255, 193, 7, 0.5); }
 
-.hero-security { margin-top: 15px; font-size: 0.85rem; opacity: 0.7; }
+.hero-visual { display: none; } /* Oculto no mobile inicial */
 
-.hero-visual { display: none; }
-
-/* --- 4. JOGOS (CSS BASE PARA SWIPER/MOBILE) --- */
-.daily-games, .how-it-works { padding: 4rem 0; }
+/* --- NOVA SEÇÃO: BOLÕES DA MEGA --- */
+.mega-boloes-section, .daily-games { padding: 4rem 0; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
-
 .section-title { text-align: center; margin-bottom: 3rem; }
-.section-title h2 { color: var(--primary); font-size: 2rem; font-weight: 800; margin-bottom: 10px; }
-.section-title p { color: #666; font-size: 1rem; }
+.section-title h2 { color: var(--primary); font-size: 2rem; font-weight: 800; }
 
-/* Configuração do Container Swiper */
-.swiperJogos {
-    width: 100%;
-    padding-bottom: 50px; /* Espaço para as bolinhas */
+.mega-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;
+}
+/* Card Premium da Mega */
+.mega-card {
+    background: white; border: 2px solid var(--gold); border-radius: 15px;
+    overflow: hidden; box-shadow: 0 10px 20px rgba(243, 146, 0, 0.15);
+    transition: 0.3s;
+}
+.mega-card:hover { transform: translateY(-5px); }
+.mega-header {
+    background: var(--gold-grad); color: var(--primary); padding: 15px;
+    text-align: center; font-weight: 800; font-size: 1.2rem;
+}
+.mega-body { padding: 20px; text-align: center; }
+.mega-price { font-size: 2rem; font-weight: 800; color: var(--primary); margin: 10px 0; }
+.mega-info { color: #666; font-size: 0.9rem; margin-bottom: 20px; }
+.btn-mega {
+    display: block; width: 100%; padding: 12px; background: var(--primary);
+    color: white; border-radius: 8px; font-weight: 700;
 }
 
-/* O CARD (Estilo padrão mobile) */
+/* --- JOGOS DO DIA (CARDS ANTIGOS) --- */
+.games-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
 .game-card {
     background: white; border-radius: 16px; overflow: hidden;
-    box-shadow: var(--shadow-soft); border: 1px solid rgba(0,0,0,0.05);
-    display: flex; flex-direction: column;
-    width: 75%; /* Mobile: 75% largura para efeito peek */
-    height: auto;
-    min-height: 380px; 
+    box-shadow: var(--shadow-soft); border: 1px solid #eee;
+    display: flex; flex-direction: column; min-height: 380px;
 }
-
-.card-header {
-    padding: 1rem 1.5rem; font-weight: 700; color: white; font-size: 1.1rem;
-    display: flex; justify-content: space-between; align-items: center;
-}
-.card-body { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; }
-
-.prize-label { font-size: 0.85rem; text-transform: uppercase; color: #999; font-weight: 600; letter-spacing: 0.5px; }
-.jackpot { font-size: 1.8rem; font-weight: 800; color: var(--text); margin: 5px 0; }
-.card-desc { font-size: 0.9rem; color: #666; margin-bottom: 20px; line-height: 1.4; min-height: 40px; }
-
+.card-header { padding: 15px; font-weight: 700; color: white; display: flex; justify-content: space-between; }
+.card-body { padding: 20px; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1; }
+.jackpot { font-size: 1.8rem; font-weight: 800; margin: 10px 0; }
 .btn-card {
-    display: flex; justify-content: center; align-items: center; gap: 8px;
-    width: 100%; border: 2px solid; padding: 12px; border-radius: 10px;
-    font-weight: 700; font-size: 0.95rem; transition: 0.2s; background: transparent;
+    border: 2px solid; padding: 10px; border-radius: 8px; text-align: center;
+    font-weight: 700; display: block; margin-top: auto;
 }
-.btn-card:hover { background-color: var(--whatsapp); border-color: var(--whatsapp) !important; color: white !important; }
 
-/* Paginação (Bolinhas) */
-.swiper-pagination-bullet { background: var(--primary); opacity: 0.3; width: 10px; height: 10px; }
-.swiper-pagination-bullet-active { opacity: 1; background: var(--gold); width: 20px; border-radius: 5px; }
-
-/* --- 5. EXTRAS --- */
-.steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 2rem; text-align: center; }
-.step { padding: 1rem; }
-.icon-circle {
-    width: 70px; height: 70px; background: #e8f5e9; color: var(--primary); 
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-size: 1.8rem; margin: 0 auto 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+/* --- AVALIAÇÕES --- */
+.reviews-section { background: white; padding: 4rem 0; border-top: 1px solid #eee; }
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.review-card {
+    background: var(--gray-light); padding: 25px; border-radius: 10px;
+    border-left: 5px solid var(--gold);
 }
-.step h3 { font-size: 1.1rem; margin-bottom: 5px; }
-.step p { font-size: 0.9rem; color: #666; }
+.stars { color: var(--gold); margin-bottom: 10px; }
+.review-card p { font-style: italic; color: #555; margin-bottom: 15px; }
+.review-card strong { color: var(--primary); }
 
-footer { background: #1a1a1a; color: #888; text-align: center; padding: 3rem 2rem; margin-top: 2rem; }
+/* --- QUEM SOMOS --- */
+.about-section { padding: 4rem 0; background: var(--primary); color: white; }
+.about-grid { display: grid; gap: 3rem; }
+.btn-outline {
+    display: inline-block; border: 2px solid white; color: white; padding: 10px 25px;
+    border-radius: 50px; font-weight: 600; margin-top: 15px;
+}
+.btn-outline:hover { background: white; color: var(--primary); }
+.map-placeholder { background: #ccc; border-radius: 10px; overflow: hidden; margin-bottom: 10px; }
 
+footer { background: #1a1a1a; color: #888; text-align: center; padding: 2rem; }
 .float-btn {
-    position: fixed; bottom: 25px; right: 25px; background: var(--whatsapp); color: white;
-    width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-size: 30px; box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4); z-index: 2000;
-    transition: transform 0.2s;
+    position: fixed; bottom: 20px; right: 20px; background: var(--whatsapp);
+    color: white; width: 60px; height: 60px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 2000;
 }
-.float-btn:hover { transform: scale(1.1); }
 
-/* --- 6. MEDIA QUERIES --- */
-
-/* Esconde a versão Desktop por padrão, para garantir que o mobile Swiper apareça primeiro */
+/* --- MEDIA QUERIES --- */
 #desktop-games-container { display: none; }
 #mobile-games-container { display: block; }
+.swiperJogos { width: 100%; padding-bottom: 40px; }
 
-
-/* MOBILE (Até 768px) */
-@media (max-width: 768px) {
-    .ticker-heading { display: none; }
-    .ticker-wrap { height: 40px; }
-    body { padding-top: 105px; }
-    header { height: 65px; }
-    .hero h1 { font-size: 2.5rem; }
-    .big-price { font-size: 2.2rem; }
-    .btn-header span { display: none; }
-    .btn-header { padding: 0; width: 40px; height: 40px; justify-content: center; }
-    
-    /* Ajuste para mobile se 750px for muito alto */
-    .hero { min-height: 500px; }
-}
-
-/* DESKTOP (A partir de 1024px) */
 @media (min-width: 1024px) {
+    .mobile-menu-toggle { display: none; }
     .desktop-nav { display: flex; }
+    .desktop-only { display: flex; }
     
-    .hero-container { 
-        justify-content: space-between; 
-        flex-direction: row-reverse; /* <<< NOVIDADE: Inverte a ordem no desktop */
-    }
-    
-    .hero-container {
-        justify-content: space-between;
-        flex-direction: row-reverse;
-    }
-    
-    .hero-content { max-width: 50%; }
-    
-    .hero-visual { 
-        display: block; width: 45%; 
-        position: relative; animation: float 6s ease-in-out infinite;
-    }
+    .hero-container { flex-direction: row-reverse; justify-content: space-between; }
+    .hero-content { text-align: left; max-width: 50%; }
+    .hero-visual { display: block; width: 45%; animation: float 6s ease-in-out infinite; }
     
     .ticket-visual {
         background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
         border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;
-        padding: 40px; text-align: center; transform: rotate(-5deg);
-        box-shadow: 0 20px 50px rgba(0,0,0,0.3); color: white;
+        padding: 40px; text-align: center; transform: rotate(-5deg); color: white;
     }
-    .ticket-visual strong { display: block; font-size: 5rem; line-height: 1; color: var(--gold); 
-        text-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-    .ticket-visual small { font-size: 1.5rem; letter-spacing: 2px; text-transform: uppercase; }
-    .ticket-footer { margin-top: 20px; background: white; color: var(--primary); padding: 10px; border-radius: 50px; font-weight: 800; }
+    .ticket-visual strong { display: block; font-size: 5rem; line-height: 1; color: var(--gold); }
+    .ticket-footer { background: white; color: var(--primary); padding: 10px; border-radius: 50px; font-weight: 800; margin-top: 20px; display: block; }
 
-    /* REGRAS DE VISIBILIDADE CRÍTICAS */
     #desktop-games-container { display: block; }
     #mobile-games-container { display: none; }
-
-
-    /* CORREÇÃO DO LAYOUT (APLICA GRID NA VERSÃO DESKTOP) */
-    .games-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-    }
-
-    /* ESTILOS DE CARD SEM SWIPER (PARA O GRID) */
-    .game-card {
-        width: auto; /* Garante que os cards preencham a célula do grid */
-    }
+    .about-grid { grid-template-columns: 1fr 1fr; align-items: center; }
 }
 
 @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
