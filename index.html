@@ -50,17 +50,17 @@
                     <a href="#hero">Início</a>
                     <a href="#mega-boloes">Bolões Mega</a>
                     <a href="#daily-games">Jogos do Dia</a>
-                    <a href="#reviews">Avaliações</a>
-                    <a href="#about-location">Contato</a>
+                    <a href="#how-it-works">Como Apostar</a>
+                    <a href="#about">Quem Somos</a>
                 </nav>
+
+                <a href="#" class="btn-header btn-whatsapp-geral desktop-only">
+                    <i class="fab fa-whatsapp"></i> <span>Aposte Já</span>
+                </a>
 
                 <button class="mobile-menu-toggle" id="mobileMenuBtn">
                     <i class="fas fa-bars"></i>
                 </button>
-
-                <a href="#" class="btn-header btn-whatsapp-geral desktop-only">
-                    <i class="fab fa-whatsapp"></i> <span>(11) 99999-9999</span>
-                </a>
             </div>
         </header>
 
@@ -68,8 +68,9 @@
             <a href="#hero" class="mobile-link">Início</a>
             <a href="#mega-boloes" class="mobile-link">Bolões da Virada</a>
             <a href="#daily-games" class="mobile-link">Jogos do Dia</a>
-            <a href="#reviews" class="mobile-link">Depoimentos</a>
-            <a href="#about-location" class="mobile-link">Localização</a>
+            <a href="#how-it-works" class="mobile-link">Como Funciona</a>
+            <a href="#about" class="mobile-link">Quem Somos</a>
+            <a href="#location" class="mobile-link">Localização</a>
             <a href="#" class="mobile-link highlight btn-whatsapp-geral">
                 <i class="fab fa-whatsapp"></i> Falar no WhatsApp
             </a>
@@ -120,8 +121,16 @@
                 <p>Estratégias exclusivas para a Mega da Virada.</p>
             </div>
             
-            <div class="mega-grid" id="mega-boloes-container">
+            <div id="desktop-mega-container">
+                <div class="mega-grid" id="mega-boloes-grid"></div>
+            </div>
+
+            <div id="mobile-mega-container" class="mobile-slider-view">
+                <div class="swiper swiperMega">
+                    <div class="swiper-wrapper" id="swiper-mega-wrapper"></div>
+                    <div class="swiper-pagination"></div>
                 </div>
+            </div>
         </div>
     </section>
 
@@ -133,15 +142,49 @@
             </div>
 
             <div id="desktop-games-container">
-                <div class="games-grid" id="daily-games-grid">
-                    </div>
+                <div class="games-grid" id="daily-games-grid"></div>
+                <div class="view-more-container">
+                    <button id="btn-show-more" class="btn-show-more">
+                        Ver Mais Jogos <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
             </div>
 
             <div id="mobile-games-container" class="mobile-slider-view">
                 <div class="swiper swiperJogos">
-                    <div class="swiper-wrapper" id="swiper-daily-wrapper">
-                        </div>
+                    <div class="swiper-wrapper" id="swiper-daily-wrapper"></div>
                     <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>✅ Como Apostar Online?</h2>
+                <p>É simples, rápido e 100% seguro.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="icon-circle"><i class="fas fa-hand-pointer"></i></div>
+                    <h3>1. Escolha</h3>
+                    <p>Selecione um de nossos bolões da Mega da Virada ou jogos do dia.</p>
+                </div>
+                <div class="step">
+                    <div class="icon-circle"><i class="fab fa-whatsapp"></i></div>
+                    <h3>2. Chame</h3>
+                    <p>Clique em "Apostar" e fale com nossa equipe no WhatsApp.</p>
+                </div>
+                <div class="step">
+                    <div class="icon-circle"><i class="fas fa-qrcode"></i></div>
+                    <h3>3. Pagamento</h3>
+                    <p>Faça o pagamento via Pix. É instantâneo e sem taxas.</p>
+                </div>
+                <div class="step">
+                    <div class="icon-circle"><i class="fas fa-ticket-alt"></i></div>
+                    <h3>4. Comprovante</h3>
+                    <p>Receba a foto do seu bilhete oficial registrado na hora.</p>
                 </div>
             </div>
         </div>
@@ -172,27 +215,50 @@
         </div>
     </section>
 
-    <section class="about-section" id="about-location">
+    <section class="about-section" id="about">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-info">
+            <div class="about-container">
+                <div class="about-text">
                     <h3>🏢 Quem Somos</h3>
-                    <p>A <strong>Lotérica Country Club</strong> é credenciada oficial CAIXA. Atuamos com seriedade para levar a sorte até você através de bolões inteligentes.</p>
-                    <a href="#" class="btn-outline btn-whatsapp-geral">Fale Conosco</a>
+                    <p>A <strong>Lotérica Country Club</strong> é uma unidade credenciada oficial da CAIXA ECONÔMICA FEDERAL.</p>
+                    <p>Com anos de tradição, somos especialistas em bolões de altas probabilidades. Nossa missão é oferecer comodidade e segurança para apostadores de todo o Brasil através do nosso atendimento digital.</p>
+                    <ul class="about-list">
+                        <li><i class="fas fa-check-circle"></i> Credibilidade e Tradição</li>
+                        <li><i class="fas fa-check-circle"></i> Atendimento Humanizado</li>
+                        <li><i class="fas fa-check-circle"></i> Pagamento Facilitado</li>
+                    </ul>
                 </div>
-                <div class="about-map">
-                    <h3>📍 Localização</h3>
-                    <div class="map-placeholder">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975!2d-46.6!3d-23.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzAwLjAiUyA0NsKwMzYnMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1600000000000!5m2!1spt-BR!2sbr" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-                    <p>Av. Principal, 100 - Centro, Cidade - SP</p>
+                <div class="about-gallery">
+                    <div class="gallery-item"><img src="https://via.placeholder.com/300x200?text=Fachada" alt="Fachada da Lotérica"></div>
+                    <div class="gallery-item"><img src="https://via.placeholder.com/300x200?text=Equipe" alt="Equipe"></div>
+                    <div class="gallery-item"><img src="https://via.placeholder.com/300x200?text=Interior" alt="Interior"></div>
+                    <div class="gallery-item"><img src="https://via.placeholder.com/300x200?text=Atendimento" alt="Atendimento"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="location-section" id="location">
+        <div class="container">
+            <div class="section-title">
+                <h2>📍 Onde Estamos</h2>
+                <p>Venha nos fazer uma visita ou aposte online.</p>
+            </div>
+            <div class="location-wrapper">
+                <div class="map-frame">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975!2d-46.6!3d-23.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzAwLjAiUyA0NsKwMzYnMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1600000000000!5m2!1spt-BR!2sbr" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="address-box">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Av. Principal, 100 - Centro, Sua Cidade - SP</p>
+                    <p class="hours">Seg a Sex: 08h às 18h | Sáb: 08h às 12h</p>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Lotérica Country Club. Jogue com responsabilidade.</p>
+        <p>© 2025 Lotérica Country Club. Jogue com responsabilidade. <br> Credenciada Oficial CAIXA.</p>
     </footer>
 
     <a href="#" class="float-btn btn-whatsapp-geral"><i class="fab fa-whatsapp"></i></a>

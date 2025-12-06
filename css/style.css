@@ -1,8 +1,8 @@
 /* --- 1. RESET E VARIÁVEIS --- */
 :root {
-    --primary: #005CA9;      /* Azul */
-    --primary-dark: #002b18; /* Verde Escuro (Fallback) */
-    --gold: #F39200;         /* Laranja */
+    --primary: #005CA9;      
+    --primary-dark: #002b18; 
+    --gold: #F39200;         
     --gold-grad: linear-gradient(135deg, #F39200 0%, #ffc107 100%);
     --white: #ffffff;
     --gray-light: #f4f6f8;
@@ -13,10 +13,13 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; -webkit-tap-highlight-color: transparent; }
 
+html { scroll-behavior: smooth; }
+section { scroll-margin-top: 140px; } /* Correção do Header tapando título */
+
 body { 
     background-color: var(--gray-light); 
     color: var(--text); 
-    padding-top: 115px; /* Ajuste para o header + faixa */
+    padding-top: 115px; 
     line-height: 1.5;
     overflow-x: hidden; 
 }
@@ -28,24 +31,28 @@ button { cursor: pointer; border: none; outline: none; }
 /* --- POP-UP IDADE --- */
 .age-popup-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
-
+    background-color: rgba(0, 0, 0, 0); 
     display: flex; justify-content: center; align-items: center;
     z-index: 9999; opacity: 0; visibility: hidden; transition: 0.3s;
 }
-.age-popup-overlay.active { opacity: 1; visibility: visible; }
-.age-popup-content { background: #065DA5; padding: 40px; border-radius: 15px; text-align: center; max-width: 90%; width: 400px; color: #eee; }
+.age-popup-overlay.active { opacity: 1; visibility: visible; background-color: rgba(0, 0, 0, 0.5); }
+.age-popup-content { 
+    background: var(--primary); padding: 40px; border-radius: 15px; text-align: center; 
+    max-width: 90%; width: 400px; color: white; box-shadow: 0 20px 50px rgba(0,0,0,0.5); 
+}
 .age-popup-buttons { display: flex; gap: 15px; justify-content: center; margin-top: 20px; }
-.btn-age { padding: 10px 30px; border-radius: 5px; font-weight: bold; border: 2px solid var(--primary); }
-.btn-no { background: #eee }
-.btn-yes { background: #F39200; color: white; }
+.btn-age { padding: 10px 35px; border-radius: 5px; font-weight: bold; border: 2px solid var(--gold); transition: 0.3s; }
+.btn-no { background: transparent; color: var(--gold); }
+.btn-no:hover { background: rgba(255,255,255,0.1); transform: scale(1.05); }
+.btn-yes { background: var(--gold); color: var(--primary); }
+.btn-yes:hover { background: white; border-color: white; color: var(--primary); transform: scale(1.05); }
 
-/* --- TOPO FIXO E FAIXA --- */
+/* --- HEADER --- */
 #fixed-header-container {
     position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
-/* Faixa de Imagens (Marquee) */
 .image-marquee-wrap {
     background: var(--primary); height: 40px; overflow: hidden; position: relative;
     display: flex; align-items: center;
@@ -67,41 +74,35 @@ header {
     width: 100%; max-width: 1200px; margin: 0 auto; 
     display: flex; justify-content: space-between; align-items: center;
 }
-
 .logo img { height: 50px; width: auto; }
 
-/* Menu Desktop */
-.desktop-nav { display: none; gap: 25px; }
+/* CONTROLE DE VISIBILIDADE (DESKTOP VS MOBILE) */
+.desktop-nav { display: none; gap: 20px; }
 .desktop-nav a { color: var(--primary); font-weight: 600; font-size: 0.95rem; }
 .desktop-nav a:hover { color: var(--gold); }
 
-/* Botão Header Desktop */
+.desktop-only { display: none; } /* Escondido por padrão (Mobile First) */
+
 .btn-header {
     background: var(--gold); color: var(--primary); padding: 8px 25px;
     border-radius: 50px; font-weight: 700; display: flex; align-items: center; gap: 8px;
 }
 .btn-header:hover { background: var(--primary); color: white; }
-.desktop-only { display: none; }
 
-/* --- MENU MOBILE (ABAIXAR) --- */
-.mobile-menu-toggle {
-    font-size: 1.8rem; color: var(--primary); background: none;
-}
+/* Botão Hambúrguer Mobile */
+.mobile-menu-toggle { font-size: 1.8rem; color: var(--primary); background: none; display: block; }
+
 .mobile-menu-dropdown {
     background: white; width: 100%; position: absolute; top: 115px; left: 0;
-    flex-direction: column; padding: 0; 
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    flex-direction: column; padding: 0; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     max-height: 0; overflow: hidden; transition: max-height 0.4s ease-in-out;
     z-index: 900; display: flex;
 }
-.mobile-menu-dropdown.open { max-height: 400px; } /* Altura suficiente para os links */
-.mobile-link {
-    padding: 15px 20px; border-bottom: 1px solid #f0f0f0; 
-    color: var(--primary); font-weight: 600;
-}
+.mobile-menu-dropdown.open { max-height: 400px; }
+.mobile-link { padding: 15px 20px; border-bottom: 1px solid #f0f0f0; color: var(--primary); font-weight: 600; }
 .mobile-link.highlight { background: var(--whatsapp); color: white; text-align: center; justify-content: center; display: flex; gap: 8px; }
 
-/* --- HERO SECTION --- */
+/* --- HERO --- */
 .hero {
     background-color: var(--primary-dark); 
     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../bannercaixa\ \(1\).jpg');
@@ -113,8 +114,7 @@ header {
     width: 100%; max-width: 1200px; display: flex; 
     flex-direction: column; align-items: center; gap: 40px;
 }
-.hero-content { max-width: 600px; text-align: center; } /* Mobile center */
-
+.hero-content { max-width: 600px; text-align: center; } 
 .badge-hero { background: var(--gold); color: var(--primary); padding: 5px 15px; border-radius: 20px; font-weight: 800; display: inline-block; margin-bottom: 10px; }
 .hero h1 { font-size: 2.8rem; line-height: 1.1; font-weight: 800; margin-bottom: 15px; }
 .text-gold { color: var(--gold); }
@@ -124,90 +124,95 @@ header {
     border-radius: 50px; font-weight: 800; font-size: 1.1rem; display: inline-flex; gap: 10px;
     margin-bottom: 10px;
 }
+.btn-hero:hover { transform: scale(1.05); }
+.hero-security { margin-top: 15px; font-size: 0.85rem; opacity: 0.7; }
+.hero-visual { display: none; } 
 
-.hero-visual { display: none; } /* Oculto no mobile inicial */
-
-/* --- NOVA SEÇÃO: BOLÕES DA MEGA --- */
-.mega-boloes-section, .daily-games { padding: 4rem 0; }
+/* --- SEÇÕES GERAIS --- */
+.mega-boloes-section, .daily-games, .how-it-works, .reviews-section, .about-section, .location-section { padding: 4rem 0; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
 .section-title { text-align: center; margin-bottom: 3rem; }
 .section-title h2 { color: var(--primary); font-size: 2rem; font-weight: 800; }
 
-.mega-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;
-}
-/* Card Premium da Mega */
+.mega-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
 .mega-card {
     background: white; border: 2px solid var(--gold); border-radius: 15px;
-    overflow: hidden; box-shadow: 0 10px 20px rgba(243, 146, 0, 0.15);
-    transition: 0.3s;
+    overflow: hidden; box-shadow: 0 10px 20px rgba(243, 146, 0, 0.15); transition: 0.3s;
+    height: 100%; display: flex; flex-direction: column; justify-content: space-between;
 }
 .mega-card:hover { transform: translateY(-5px); }
-.mega-header {
-    background: var(--gold-grad); color: var(--primary); padding: 15px;
-    text-align: center; font-weight: 800; font-size: 1.2rem;
-}
-.mega-body { padding: 20px; text-align: center; }
+.mega-header { background: var(--gold-grad); color: var(--primary); padding: 15px; text-align: center; font-weight: 800; font-size: 1.2rem; }
+.mega-body { padding: 20px; text-align: center; display: flex; flex-direction: column; flex-grow: 1; }
 .mega-price { font-size: 2rem; font-weight: 800; color: var(--primary); margin: 10px 0; }
 .mega-info { color: #666; font-size: 0.9rem; margin-bottom: 20px; }
-.btn-mega {
-    display: block; width: 100%; padding: 12px; background: var(--primary);
-    color: white; border-radius: 8px; font-weight: 700;
-}
+.btn-mega { display: block; width: 100%; padding: 12px; background: var(--primary); color: white; border-radius: 8px; font-weight: 700; margin-top: auto; }
 
-/* --- JOGOS DO DIA (CARDS ANTIGOS) --- */
 .games-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
 .game-card {
     background: white; border-radius: 16px; overflow: hidden;
     box-shadow: var(--shadow-soft); border: 1px solid #eee;
     display: flex; flex-direction: column; min-height: 380px;
 }
+.game-card.hidden-card { display: none; }
 .card-header { padding: 15px; font-weight: 700; color: white; display: flex; justify-content: space-between; }
 .card-body { padding: 20px; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1; }
 .jackpot { font-size: 1.8rem; font-weight: 800; margin: 10px 0; }
-.btn-card {
-    border: 2px solid; padding: 10px; border-radius: 8px; text-align: center;
-    font-weight: 700; display: block; margin-top: auto;
+.btn-card { border: 2px solid; padding: 10px; border-radius: 8px; text-align: center; font-weight: 700; display: block; margin-top: auto; }
+.view-more-container { text-align: center; margin-top: 30px; }
+.btn-show-more {
+    background: transparent; border: 2px solid var(--primary); color: var(--primary);
+    padding: 10px 30px; border-radius: 50px; font-weight: 700; font-size: 1rem;
+    transition: 0.3s;
 }
+.btn-show-more:hover { background: var(--primary); color: white; }
 
-/* --- AVALIAÇÕES --- */
-.reviews-section { background: white; padding: 4rem 0; border-top: 1px solid #eee; }
-.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-.review-card {
-    background: var(--gray-light); padding: 25px; border-radius: 10px;
-    border-left: 5px solid var(--gold);
+/* SLIDER CONTROLS MOBILE */
+#desktop-games-container, #desktop-mega-container { display: none; }
+#mobile-games-container, #mobile-mega-container { display: block; }
+.swiperJogos, .swiperMega { width: 100%; padding-bottom: 40px; }
+.mobile-slider-view .game-card, .mobile-slider-view .mega-card { width: 280px; } 
+
+.steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center; }
+.step { padding: 1rem; }
+.icon-circle {
+    width: 70px; height: 70px; background: white; color: var(--primary);
+    border: 2px solid var(--gold); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem; margin: 0 auto 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
+.step h3 { font-size: 1.1rem; margin-bottom: 10px; color: var(--primary); font-weight: 700; }
+.step p { font-size: 0.9rem; color: #555; }
+
+.reviews-section { background: white; border-top: 1px solid #eee; }
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.review-card { background: var(--gray-light); padding: 25px; border-radius: 10px; border-left: 5px solid var(--gold); }
 .stars { color: var(--gold); margin-bottom: 10px; }
 .review-card p { font-style: italic; color: #555; margin-bottom: 15px; }
 .review-card strong { color: var(--primary); }
 
-/* --- QUEM SOMOS --- */
-.about-section { padding: 4rem 0; background: var(--primary); color: white; }
-.about-grid { display: grid; gap: 3rem; }
-.btn-outline {
-    display: inline-block; border: 2px solid white; color: white; padding: 10px 25px;
-    border-radius: 50px; font-weight: 600; margin-top: 15px;
-}
-.btn-outline:hover { background: white; color: var(--primary); }
-.map-placeholder { background: #ccc; border-radius: 10px; overflow: hidden; margin-bottom: 10px; }
+.about-section { background: var(--primary); color: white; }
+.about-container { display: grid; gap: 3rem; grid-template-columns: 1fr; }
+.about-text h3 { font-size: 2rem; font-weight: 700; margin-bottom: 20px; color: var(--gold); }
+.about-list { list-style: none; margin: 20px 0; }
+.about-list li { margin-bottom: 10px; display: flex; gap: 10px; align-items: center; font-weight: 600; }
+.about-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+.gallery-item img { width: 100%; height: 150px; object-fit: cover; border-radius: 10px; border: 2px solid var(--gold); }
+
+.location-section { background: var(--gray-light); text-align: center; }
+.map-frame { border-radius: 15px; overflow: hidden; box-shadow: var(--shadow-soft); border: 5px solid white; }
+.address-box { margin-top: 20px; background: white; padding: 20px; border-radius: 10px; display: inline-block; box-shadow: var(--shadow-soft); }
+.address-box i { font-size: 2rem; color: var(--gold); margin-bottom: 10px; }
+.address-box p { color: #555; font-weight: 500; }
 
 footer { background: #1a1a1a; color: #888; text-align: center; padding: 2rem; }
-.float-btn {
-    position: fixed; bottom: 20px; right: 20px; background: var(--whatsapp);
-    color: white; width: 60px; height: 60px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center; font-size: 30px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 2000;
-}
+.float-btn { position: fixed; bottom: 20px; right: 20px; background: var(--whatsapp); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 2000; }
 
-/* --- MEDIA QUERIES --- */
-#desktop-games-container { display: none; }
-#mobile-games-container { display: block; }
-.swiperJogos { width: 100%; padding-bottom: 40px; }
-
+/* --- MEDIA QUERIES (DESKTOP) --- */
 @media (min-width: 1024px) {
-    .mobile-menu-toggle { display: none; }
-    .desktop-nav { display: flex; }
-    .desktop-only { display: flex; }
+    /* CORREÇÃO DO HEADER */
+    .mobile-menu-toggle { display: none; } /* Esconde hambúrguer */
+    .desktop-nav { display: flex; } /* Mostra Nav */
+    .desktop-only { display: flex; } /* Mostra Botão Header */
     
     .hero-container { flex-direction: row-reverse; justify-content: space-between; }
     .hero-content { text-align: left; max-width: 50%; }
@@ -221,9 +226,10 @@ footer { background: #1a1a1a; color: #888; text-align: center; padding: 2rem; }
     .ticket-visual strong { display: block; font-size: 5rem; line-height: 1; color: var(--gold); }
     .ticket-footer { background: white; color: var(--primary); padding: 10px; border-radius: 50px; font-weight: 800; margin-top: 20px; display: block; }
 
-    #desktop-games-container { display: block; }
-    #mobile-games-container { display: none; }
-    .about-grid { grid-template-columns: 1fr 1fr; align-items: center; }
+    #desktop-games-container, #desktop-mega-container { display: block; }
+    #mobile-games-container, #mobile-mega-container { display: none; }
+    
+    .about-container { grid-template-columns: 1fr 1fr; align-items: center; }
+    .gallery-item img { height: 200px; }
 }
-
 @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
