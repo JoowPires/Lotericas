@@ -7,7 +7,8 @@ const megaSyndicates = [
     { id: 2, desc: "10 Apostas de 7 Dezenas", valor: 56.70, premio: "R$ 850 MILHÕES", cotas: 10 },
     { id: 3, desc: "3 Apostas de 9 Dezenas", valor: 102.24, premio: "R$ 850 MILHÕES", cotas: 20 },
     { id: 4, desc: "2 Apostas de 10 Dezenas", valor: 141.75, premio: "R$ 850 MILHÕES", cotas: 24 },
-    { id: 5, desc: "3 Apostas de 9 Dezenas (Extra)", valor: 51.41, premio: "R$ 850 MILHÕES", cotas: 40 }
+    { id: 5, desc: "3 Apostas de 9 Dezenas ", valor: 51.41, premio: "R$ 850 MILHÕES", cotas: 40 },
+    { id: 6, desc: "200 Apostas de 6 Dezenas ", valor: 324.00, premio: "R$ 850 MILHÕES", cotas: 200 }
 ];
 
 // --- DADOS DOS JOGOS DO DIA (COM TAGS E DIAS) ---
@@ -289,18 +290,31 @@ function updateAllLinks() {
 }
 
 function initSwipers() {
+    // Slider do Topo (Faixa de Prêmios)
     new Swiper(".swiperMarquee", { 
         slidesPerView: "auto", loop: true, speed: 6000, 
         autoplay: { delay: 0, disableOnInteraction: false }, 
         allowTouchMove: false 
     });
 
+    // Slider Jogos do Dia (COM EFEITO 3D COVERFLOW)
     new Swiper(".swiperJogos", { 
-        effect: "coverflow", grabCursor: true, centeredSlides: true, slidesPerView: "auto", 
-        coverflowEffect: { rotate: 40, stretch: 0, depth: 100, modifier: 1, slideShadows: true }, 
+        effect: "coverflow", 
+        grabCursor: true, 
+        centeredSlides: true, 
+        slidesPerView: "auto", 
+        initialSlide: 1, 
+        coverflowEffect: { 
+            rotate: 35, 
+            stretch: 0, 
+            depth: 100, 
+            modifier: 1, 
+            slideShadows: false
+        }, 
         pagination: { el: ".swiper-pagination", dynamicBullets: true } 
     });
 
+    // Slider Mega da Virada (Normal)
     new Swiper(".swiperMega", { 
         slidesPerView: "auto", centeredSlides: true, spaceBetween: 20, 
         pagination: { el: ".swiper-pagination", dynamicBullets: true } 

@@ -157,7 +157,7 @@ header {
     z-index: 2;
 }
 
-/* --- NOVO CARD DE VIDRO COMPLETO --- */
+/* --- CARD DE VIDRO CENTRAL --- */
 .hero-glass-card {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(12px);         
@@ -177,7 +177,6 @@ header {
     animation: fadeInUp 0.8s ease-out;
 }
 
-/* 1. Badge */
 .glass-badge {
     background: var(--gold); color: var(--primary-dark);
     padding: 6px 20px; border-radius: 50px;
@@ -186,7 +185,6 @@ header {
     display: inline-block;
 }
 
-/* 2. Título */
 .glass-title {
     font-size: 2.8rem; line-height: 0.9; font-weight: 900;
     color: white; margin-bottom: 20px;
@@ -199,7 +197,6 @@ header {
     color: transparent;
 }
 
-/* 3. Preço */
 .label-premio {
     color: #ddd; font-size: 0.8rem; letter-spacing: 2px;
     text-transform: uppercase; font-weight: 600; margin-bottom: 0px;
@@ -214,7 +211,6 @@ header {
     color: var(--gold);
 }
 
-/* 4. Cronômetro */
 .countdown-wrapper { display: flex; justify-content: center; gap: 8px; margin-bottom: 20px; }
 .time-box {
     background: rgba(0, 0, 0, 0.4); border-radius: 10px;
@@ -225,13 +221,11 @@ header {
 .time-box small { font-size: 0.6rem; color: #ccc; font-weight: 600; margin-top: 3px; display: block; }
 .sep { font-size: 1.5rem; font-weight: 300; color: rgba(255,255,255,0.4); margin-top: 5px; }
 
-/* 5. Descrição */
 .glass-desc {
     color: rgba(255, 255, 255, 0.9); font-size: 0.95rem;
     line-height: 1.4; margin-bottom: 20px; font-weight: 500;
 }
 
-/* 6. Botão */
 .btn-glass-action {
     background: linear-gradient(90deg, #F39200 0%, #ffc107 100%);
     color: #002b18; padding: 15px 30px; border-radius: 50px;
@@ -246,628 +240,44 @@ header {
     background: white; color: #F39200;
 }
 
-/* 7. Selo de Segurança */
 .glass-security {
     margin-top: 15px; font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.7);
     display: flex; align-items: center; gap: 6px;
 }
 
-/* Imagens Laterais */
-.hero-center-img, .hero-right-img {
+/* --- ELEMENTOS LATERAIS --- */
+
+/* 1. Imagem Central (Logo 3D) */
+.hero-center-img {
     width: 100%; max-width: 350px;
     display: flex; justify-content: center;
+    order: -1; 
 }
+
 .floating-3d-logo {
     width: 100%; height: auto;
     filter: drop-shadow(0 20px 30px rgba(0,0,0,0.6));
     animation: float 6s ease-in-out infinite, fadeInUp 1s ease-out backwards;
     transform: perspective(1000px) rotateY(-5deg);
 }
-.floating-sticker {
-    width: 100%; height: auto;
-    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.5));
-    animation: float 5s ease-in-out infinite 1s, zoomIn 0.8s ease-out 0.5s backwards;
-    cursor: pointer; transition: transform 0.3s;
-}
-.floating-sticker:hover { transform: scale(1.1) rotate(3deg); }
 
-
-/* --- CARDS BOLÕES (MEGA) - TEMA PREMIUM (VERDE E DOURADO) --- */
-.mega-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 2rem; }
-
-.mega-card {
-    /* Corpo do card: Verde Profundo */
-    background: linear-gradient(180deg, #065e31 0%, #002b18 100%);
-    border: 1px solid #FFD700; /* Borda Dourada Fina para luxo */
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    transition: all 0.4s ease;
-    display: flex; flex-direction: column; justify-content: space-between;
-    position: relative;
-}
-
-.mega-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 25px 50px rgba(0, 43, 24, 0.6);
-    /* Brilho extra na borda ao passar o mouse */
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); 
-}
-
-/* Cabeçalho do Card (AGORA DOURADO) */
-.mega-header {
-    /* Fundo Dourado para contraste */
-    background: linear-gradient(135deg, #F39200 0%, #FFD700 100%);
-    padding: 25px 20px;
-    text-align: center;
-    position: relative;
-    /* Efeito de curva suave na separação */
-    clip-path: ellipse(150% 100% at 50% 0%);
-    margin-bottom: -20px; /* Puxa o corpo um pouco pra cima para encaixar na curva */
-    padding-bottom: 40px; /* Espaço extra para a curva */
-    z-index: 1;
-}
-
-.premio-label {
-    display: block;
-    font-size: 0.8rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    color: #002b18; /* Texto Escuro para ler no Dourado */
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    opacity: 0.8;
-}
-
-.premio-valor {
-    display: block;
-    font-size: 2.4rem;
-    font-weight: 900;
-    color: #002b18; /* Valor em Verde Escuro (contraste máximo) */
-    line-height: 1;
-    text-shadow: 0 1px 2px rgba(255,255,255,0.4);
-}
-
-/* Corpo do Card */
-.mega-body {
-    padding: 30px 25px 25px; /* Mais padding no topo por causa da curva */
-    text-align: center;
-    display: flex; flex-direction: column; flex-grow: 1; gap: 15px;
-    z-index: 2; /* Garante que os botões fiquem clicáveis */
-}
-
-.bolo-desc {
-    font-size: 1.1rem;
-    color: white;
-    font-weight: 700;
-    line-height: 1.3;
-    min-height: 50px;
-    display: flex; align-items: center; justify-content: center;
-}
-
-/* Pílula de Cotas */
-.cotas-info {
-    font-size: 0.85rem;
-    color: #002b18;
-    background: #FFD700; /* Fundo Amarelo */
-    padding: 6px 15px;
-    border-radius: 50px;
-    display: inline-block;
-    font-weight: 700;
-    margin: 0 auto;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-/* Preço */
-.price-container { margin: 5px 0; }
-.price-container small { display: block; color: #ccc; font-size: 0.75rem; text-transform: uppercase; font-weight: 600; }
-.unit-price {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #fff; /* Preço Branco para destacar no fundo verde */
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-}
-
-/* Controle de Quantidade (+ e -) */
-.qty-control {
-    display: flex; justify-content: center; align-items: center; gap: 10px; margin: 10px 0;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 50px;
-    padding: 5px;
-    border: 1px solid rgba(255,255,255,0.1);
-}
-.btn-qty {
-    width: 38px; height: 38px;
-    border-radius: 50%;
-    background: white; /* Botão Branco */
-    color: #002b18;
-    font-weight: 800; font-size: 1.4rem;
-    border: none;
-    display: flex; align-items: center; justify-content: center;
-    transition: all 0.2s;
-    cursor: pointer;
-}
-.btn-qty:hover { background: var(--gold); transform: scale(1.1); }
-
-.qty-input {
-    width: 50px; text-align: center; border: none;
-    font-size: 1.4rem; font-weight: 700; 
-    color: white; 
-    background: transparent;
-}
-
-/* Total e Botão Final */
-.total-display {
-    font-size: 0.9rem; color: #ddd; margin-bottom: 5px; font-weight: 600;
-}
-.total-value { color: #FFD700; font-weight: 800; }
-
-.btn-mega {
-    display: flex; justify-content: center; align-items: center; gap: 10px;
-    width: 100%; padding: 16px;
-    background: linear-gradient(90deg, #F39200 0%, #ffc107 100%);
-    color: #002b18;
-    border-radius: 50px;
-    font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;
-    margin-top: auto;
-    transition: 0.3s;
-    box-shadow: 0 4px 15px rgba(243, 146, 0, 0.4);
-    animation: pulse-green 2s infinite;
-    text-decoration: none;
-}
-.btn-mega:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(243, 146, 0, 0.6);
-    background: white; 
-    color: #F39200;
-}
-
-/* --- JOGOS DO DIA (CORRIGIDO) --- */
-.games-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-
-.game-card {
-    background: white;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    border: 1px solid #f0f0f0;
-    transition: all 0.3s ease;
-    display: flex; flex-direction: column;
-    position: relative;
-}
-.game-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
-
-/* Cabeçalho do Card */
-.game-header {
-    padding: 25px 20px 50px 20px; /* Mais espaço para a curva */
-    text-align: center;
-    color: white;
-    position: relative;
-    clip-path: ellipse(140% 100% at 50% 0%); 
-}
-.game-title { 
-    font-size: 1.6rem; 
-    font-weight: 800; 
-    letter-spacing: 1px; 
-    text-transform: uppercase; 
-    text-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    margin-top: 15px; 
-}
-
-/* Tag Flutuante */
-.game-tag {
-    position: absolute; top: 15px; right: 15px;
-    background: rgba(70, 62, 62, 0.521);
-    backdrop-filter: blur(5px);
-    padding: 5px 12px; border-radius: 20px;
-    font-size: 0.7rem; font-weight: 700; color: rgb(255, 255, 255);
-    border: 1px solid rgba(26, 25, 25, 0.062);
-    text-transform: uppercase;
-}
-
-/* Corpo do Card (Sem margin-top negativo agressivo) */
-.game-body {
-    padding: 10px 25px 25px; 
-    display: flex; flex-direction: column;
-    gap: 15px; flex-grow: 1;
-    text-align: center;
-}
-
-/* Dias de Sorteio */
-.draw-days {
-    display: flex; justify-content: center; gap: 5px; flex-wrap: wrap;
-    margin-bottom: 5px;
-}
-.day-badge {
-    font-size: 0.75rem; font-weight: 700; color: #555;
-    background: #f0f4f8; padding: 5px 10px; border-radius: 6px;
-    border: 1px solid #e1e8ed;
-}
-
-/* Informações */
-.game-info-block h4 { font-size: 0.85rem; color: #999; margin-bottom: 5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-.game-info-block p { font-size: 0.9rem; color: #444; line-height: 1.5; font-weight: 500; }
-.game-info-block strong { color: var(--primary); }
-
-/* Botão do Card (USANDO VARIÁVEL CSS) */
-.btn-game-action {
-    margin-top: auto;
-    color: var(--btn-color); 
-    border: 2px solid var(--btn-color);
-    background: transparent;
-    padding: 14px; border-radius: 50px;
-    font-weight: 800; font-size: 0.95rem;
-    transition: 0.3s;
-    text-transform: uppercase;
-    display: flex; justify-content: center; align-items: center; gap: 8px;
-    text-decoration: none;
-}
-.btn-game-action:hover {
-    background-color: var(--btn-color); 
-    color: white !important; 
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-}
-.btn-game-action i { font-size: 1.2rem; }
-
-/* Botão Ver Mais e Esconder Cards */
-.view-more-container { text-align: center; margin-top: 40px; }
-.btn-show-more { background: white; border: 2px solid #ddd; color: #555; padding: 12px 35px; border-radius: 50px; font-weight: 700; transition: 0.3s; }
-.btn-show-more:hover { border-color: var(--primary); color: var(--primary); }
-.game-card.hidden-card { display: none; }
-
-
-/* --- COMO APOSTAR (5 PASSOS - VISUAL CARD) --- */
-.how-it-works {
-    background-color: #eef2f5; 
-    padding: 5rem 0;
-}
-
-.steps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2rem;
-    align-items: stretch;
-}
-
-.step-card {
-    background: white;
-    padding: 30px 20px;
-    border-radius: 20px;
-    text-align: center;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    transition: all 0.3s ease;
-    border-bottom: 4px solid transparent;
-    display: flex; flex-direction: column; align-items: center;
-}
-
-.step-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    border-bottom-color: var(--gold); 
-}
-
-/* Número Grande no Fundo (01, 02...) */
-.step-number {
-    font-size: 3rem;
-    font-weight: 900;
-    color: rgba(0,0,0,0.05); 
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    line-height: 1;
-}
-
-/* Ícone */
-.step-icon {
-    width: 70px; height: 70px;
-    background: var(--primary); 
-    color: white;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    box-shadow: 0 8px 20px rgba(0, 92, 169, 0.3);
-    position: relative; z-index: 2;
-}
-
-/* Texto */
-.step-card h3 {
-    font-size: 1.1rem;
-    color: var(--primary-dark);
-    font-weight: 800;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-.step-card p {
-    font-size: 0.9rem;
-    color: #666;
-    line-height: 1.6;
-}
-
-/* Destaque para palavras em negrito */
-.step-card p strong {
-    color: var(--primary);
-}
-/* --- QUEM SOMOS (LAYOUT COM FOTOS) --- */
-.about-section {
-    background-color: white;
-    padding: 5rem 0;
-    overflow: hidden; /* Para conter as imagens */
-}
-
-.about-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Dividido em 2 colunas */
-    gap: 4rem;
-    align-items: center;
-}
-
-/* Texto */
-.about-text p {
-    color: #555;
-    line-height: 1.7;
-    margin-bottom: 20px;
-    font-size: 0.95rem;
-}
-
-.about-text strong {
-    color: var(--primary);
-    font-weight: 700;
-}
-
-/* Lista de Destaques */
-.about-features {
-    margin: 25px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.feature-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-}
-
-.feature-item i {
-    color: var(--whatsapp); /* Check verde */
-    font-size: 1.2rem;
-    margin-top: 3px;
-}
-
-.feature-item span {
-    font-size: 0.9rem;
-    color: #444;
-}
-
-/* Chamada Final */
-.about-cta {
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: var(--primary-dark) !important;
-    border-left: 4px solid var(--gold);
-    padding-left: 15px;
-    margin-top: 20px;
-}
-
-/* Imagens (Composição Criativa) */
-.about-images {
-    position: relative;
-    height: 450px; /* Altura da área das imagens */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.img-main {
-    width: 85%;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1;
-    border: 5px solid white;
-}
-
-.img-secondary {
-    width: 60%;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    z-index: 2;
-    border: 5px solid white;
-}
-
-/* Selo de Anos de Tradição */
-.experience-badge {
-    position: absolute;
-    top: 15%;
-    left: -20px;
-    background: var(--gold-grad);
-    color: white;
-    padding: 15px 25px;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(243, 146, 0, 0.4);
-    z-index: 3;
-    text-align: center;
-    animation: float 4s ease-in-out infinite;
-}
-
-.experience-badge .years {
-    display: block;
-    font-size: 2rem;
-    font-weight: 900;
-    line-height: 1;
-}
-
-.experience-badge .text {
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-/* Responsivo (Mobile) */
-@media (max-width: 1024px) {
-    .about-container {
-        grid-template-columns: 1fr; /* Empilha tudo */
-        gap: 3rem;
-    }
-    
-    .about-text { text-align: left; }
-    
-    .about-images {
-        height: 350px; /* Reduz altura no mobile */
-        margin-top: 20px;
-    }
-    
-    .img-main { width: 80%; }
-    .img-secondary { width: 60%; bottom: 0; left: 10px; }
-    .experience-badge { left: 0; top: 0; padding: 10px 15px; }
-    .experience-badge .years { font-size: 1.5rem; }
-}
-/* --- BOTÃO E MODAL DE INFORMAÇÕES EXTRAS --- */
-
-/* Container do Botão */
-.more-info-container {
-    text-align: center;
-    margin-top: 40px;
-}
-
-/* Estilo do Botão "Mais Informações" */
-.btn-info-outline {
-    background: transparent;
-    border: 2px solid var(--primary);
-    color: var(--primary);
-    padding: 12px 30px;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-flex; align-items: center; gap: 8px;
-}
-
-.btn-info-outline:hover {
-    background: var(--primary);
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 92, 169, 0.2);
-}
-
-/* --- MODAL (JANELA) --- */
-.info-modal-overlay {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Fundo escuro */
-    backdrop-filter: blur(5px);
-    z-index: 10000; /* Acima de tudo */
-    display: flex; justify-content: center; align-items: center;
-    opacity: 0; visibility: hidden;
-    transition: all 0.3s ease;
-}
-
-.info-modal-overlay.active {
-    opacity: 1; visibility: visible;
-}
-
-.info-modal-content {
-    background: white;
-    width: 90%; max-width: 500px;
-    border-radius: 20px;
-    padding: 30px;
-    position: relative;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-    transform: scale(0.8);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border-top: 5px solid var(--gold);
-}
-
-.info-modal-overlay.active .info-modal-content {
-    transform: scale(1);
-}
-
-/* Conteúdo do Modal */
-.close-modal {
-    position: absolute; top: 15px; right: 20px;
-    font-size: 1.8rem; cursor: pointer; color: #999;
-    transition: 0.2s;
-}
-.close-modal:hover { color: var(--primary); }
-
-.modal-header { text-align: center; margin-bottom: 20px; color: var(--primary); }
-.modal-header i { font-size: 2rem; margin-bottom: 10px; display: block; }
-.modal-header h3 { font-weight: 800; text-transform: uppercase; }
-
-.modal-body p { font-size: 0.95rem; color: #555; line-height: 1.6; text-align: center; }
-.modal-body strong { color: var(--primary-dark); }
-.modal-divider { border: 0; border-top: 1px solid #eee; margin: 20px 0; }
-.modal-body em { display: block; margin-top: 5px; color: var(--gold); font-weight: 700; font-style: normal; }
-
-.btn-modal-close {
-    background: var(--primary); color: white;
-    width: 100%; padding: 12px; border-radius: 10px;
-    font-weight: 700; margin-top: 25px;
-    transition: 0.2s;
-}
-.btn-modal-close:hover { background: var(--primary-dark); }
-
-
-/* --- SEÇÕES GERAIS --- */
-.mega-boloes-section, .daily-games, .how-it-works, .reviews-section, .about-section, .location-section { padding: 4rem 0; }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
-.section-title { text-align: center; margin-bottom: 3rem; }
-.section-title h2 { color: var(--primary); font-size: 2rem; font-weight: 800; position: relative; display: inline-block; }
-.section-title h2::after { content: ''; display: block; width: 50px; height: 4px; background: var(--gold); margin: 10px auto 0; border-radius: 2px; }
-
-/* --- CONTROLE DE SLIDERS --- */
-#desktop-games-container, #desktop-mega-container { display: none; }
-#mobile-games-container, #mobile-mega-container { display: block; }
-.swiperJogos, .swiperMega { width: 100%; padding-bottom: 40px; }
-.mobile-slider-view .game-card, .mobile-slider-view .mega-card { width: 280px; } 
-
-/* --- OUTRAS SEÇÕES --- */
-.reviews-section { background: white; border-top: 1px solid #eee; }
-.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-.review-card { background: var(--gray-light); padding: 25px; border-radius: 10px; border-left: 5px solid var(--gold); transition: transform 0.3s; }
-.review-card:hover { transform: translateX(5px); background: white; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-.stars { color: var(--gold); margin-bottom: 10px; }
-.review-card p { font-style: italic; color: #555; margin-bottom: 15px; }
-.review-card strong { color: var(--primary); }
-.location-section { background: var(--gray-light); text-align: center; }
-.map-frame { border-radius: 15px; overflow: hidden; box-shadow: var(--shadow-soft); border: 5px solid white; }
-.address-box { margin-top: 20px; background: white; padding: 20px; border-radius: 10px; display: inline-block; box-shadow: var(--shadow-soft); transition: 0.3s; }
-.address-box:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
-.address-box i { font-size: 2rem; color: var(--gold); margin-bottom: 10px; }
-.address-box p { color: #555; font-weight: 500; }
-footer { background: #1a1a1a; color: #888; text-align: center; padding: 2rem; }
-.float-btn { position: fixed; bottom: 20px; right: 20px; background: var(--whatsapp); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 2000; animation: pulse-green 2s infinite; transition: transform 0.3s; }
-.float-btn:hover { transform: scale(1.1); }
-
-/* --- CONTEÚDO LATERAL (FOTO + BOTÃO) --- */
-
+/* 2. CONTAINER DA DIREITA (Foto + Botão) */
 .hero-right-img {
     width: 100%; 
     max-width: 350px;
     display: flex; 
-    flex-direction: column; /* ISSO COLOCA UM DEBAIXO DO OUTRO */
-    align-items: center;    /* Centraliza os dois */
-    gap: 20px;              /* Espaço entre a foto e o botão */
+    flex-direction: column; /* Coloca um embaixo do outro */
+    align-items: center;    /* Centraliza */
+    gap: 20px;              /* Espaço */
     
     /* Animação de entrada */
     animation: zoomIn 0.8s ease-out 0.5s backwards;
 }
 
-/* Garante que a foto continue aparecendo e flutuando */
+/* Foto Sticker */
 .floating-sticker {
-    display: block; /* Garante que apareça */
+    display: block;
     width: 100%; 
     height: auto;
     filter: drop-shadow(0 15px 25px rgba(0,0,0,0.5));
@@ -908,13 +318,313 @@ footer { background: #1a1a1a; color: #888; text-align: center; padding: 2rem; }
     font-size: 1.4rem;
 }
 
-/* Ajuste Mobile */
-@media (max-width: 992px) {
-    .hero-right-img {
-        order: -1; /* Joga tudo para o topo no celular */
-        margin-bottom: 30px;
-    }
+
+/* --- CARDS BOLÕES (MEGA) --- */
+.mega-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 2rem; }
+
+.mega-card {
+    background: linear-gradient(180deg, #065e31 0%, #002b18 100%);
+    border: 1px solid #FFD700; 
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease;
+    display: flex; flex-direction: column; justify-content: space-between;
+    position: relative;
 }
+
+.mega-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); 
+}
+
+.mega-header {
+    background: linear-gradient(135deg, #F39200 0%, #FFD700 100%);
+    padding: 25px 20px;
+    text-align: center;
+    position: relative;
+    clip-path: ellipse(150% 100% at 50% 0%);
+    margin-bottom: -20px; 
+    padding-bottom: 40px; 
+    z-index: 1;
+}
+
+.premio-label {
+    display: block;
+    font-size: 0.8rem; font-weight: 800; letter-spacing: 2px;
+    color: #002b18; margin-bottom: 5px; text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.premio-valor {
+    display: block;
+    font-size: 2.4rem; font-weight: 900; color: #002b18; 
+    line-height: 1; text-shadow: 0 1px 2px rgba(255,255,255,0.4);
+}
+
+.mega-body {
+    padding: 30px 25px 25px; 
+    text-align: center;
+    display: flex; flex-direction: column; flex-grow: 1; gap: 15px;
+    z-index: 2; 
+}
+
+.bolo-desc {
+    font-size: 1.1rem; color: white; font-weight: 700; line-height: 1.3;
+    min-height: 50px; display: flex; align-items: center; justify-content: center;
+}
+
+.cotas-info {
+    font-size: 0.85rem; color: #002b18; background: #FFD700;
+    padding: 6px 15px; border-radius: 50px; display: inline-block;
+    font-weight: 700; margin: 0 auto; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.price-container { margin: 5px 0; }
+.price-container small { display: block; color: #ccc; font-size: 0.75rem; text-transform: uppercase; font-weight: 600; }
+.unit-price {
+    font-size: 2rem; font-weight: 800; color: #fff;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.qty-control {
+    display: flex; justify-content: center; align-items: center; gap: 10px; margin: 10px 0;
+    background: rgba(0, 0, 0, 0.3); border-radius: 50px; padding: 5px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.btn-qty {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: white; color: #002b18; font-weight: 800; font-size: 1.4rem;
+    border: none; display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s; cursor: pointer;
+}
+.btn-qty:hover { background: var(--gold); transform: scale(1.1); }
+
+.qty-input {
+    width: 50px; text-align: center; border: none;
+    font-size: 1.4rem; font-weight: 700; color: white; background: transparent;
+}
+
+.total-display { font-size: 0.9rem; color: #ddd; margin-bottom: 5px; font-weight: 600; }
+.total-value { color: #FFD700; font-weight: 800; }
+
+.btn-mega {
+    display: flex; justify-content: center; align-items: center; gap: 10px;
+    width: 100%; padding: 16px;
+    background: linear-gradient(90deg, #F39200 0%, #ffc107 100%);
+    color: #002b18; border-radius: 50px; font-weight: 800; text-transform: uppercase;
+    margin-top: auto; transition: 0.3s; box-shadow: 0 4px 15px rgba(243, 146, 0, 0.4);
+    animation: pulse-green 2s infinite; text-decoration: none;
+}
+.btn-mega:hover {
+    transform: translateY(-3px); box-shadow: 0 8px 25px rgba(243, 146, 0, 0.6);
+    background: white; color: #F39200;
+}
+
+
+/* --- JOGOS DO DIA --- */
+.games-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+
+.game-card {
+    background: white; border-radius: 24px; overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #f0f0f0;
+    transition: all 0.3s ease; display: flex; flex-direction: column; position: relative;
+}
+.game-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+
+.game-header {
+    padding: 25px 20px 50px 20px; text-align: center; color: white;
+    position: relative; clip-path: ellipse(140% 100% at 50% 0%); 
+}
+.game-title { 
+    font-size: 1.6rem; font-weight: 800; letter-spacing: 1px; 
+    text-transform: uppercase; text-shadow: 0 2px 5px rgba(0,0,0,0.2); margin-top: 15px; 
+}
+
+.game-tag {
+    position: absolute; top: 15px; right: 15px;
+    background: rgba(66, 61, 61, 0.521); backdrop-filter: blur(5px);
+    padding: 5px 12px; border-radius: 20px;
+    font-size: 0.7rem; font-weight: 700; color: rgb(255, 255, 255);
+    border: 1px solid rgba(26, 25, 25, 0.062); text-transform: uppercase;
+}
+
+.game-body {
+    padding: 10px 25px 25px; display: flex; flex-direction: column;
+    gap: 15px; flex-grow: 1; text-align: center;
+}
+
+.draw-days { display: flex; justify-content: center; gap: 5px; flex-wrap: wrap; margin-bottom: 5px; }
+.day-badge {
+    font-size: 0.75rem; font-weight: 700; color: #555;
+    background: #f0f4f8; padding: 5px 10px; border-radius: 6px;
+    border: 1px solid #e1e8ed;
+}
+
+.game-info-block h4 { font-size: 0.85rem; color: #999; margin-bottom: 5px; font-weight: 700; text-transform: uppercase; }
+.game-info-block p { font-size: 0.9rem; color: #444; line-height: 1.5; font-weight: 500; }
+.game-info-block strong { color: var(--primary); }
+
+.btn-game-action {
+    margin-top: auto; color: var(--btn-color); border: 2px solid var(--btn-color);
+    background: transparent; padding: 14px; border-radius: 50px;
+    font-weight: 800; font-size: 0.95rem; transition: 0.3s; text-transform: uppercase;
+    display: flex; justify-content: center; align-items: center; gap: 8px; text-decoration: none;
+}
+.btn-game-action:hover {
+    background-color: var(--btn-color); color: white !important; 
+    transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+.btn-game-action i { font-size: 1.2rem; }
+
+.view-more-container { text-align: center; margin-top: 40px; }
+.btn-show-more { background: white; border: 2px solid #ddd; color: #555; padding: 12px 35px; border-radius: 50px; font-weight: 700; transition: 0.3s; }
+.btn-show-more:hover { border-color: var(--primary); color: var(--primary); }
+.game-card.hidden-card { display: none; }
+
+
+/* --- COMO APOSTAR --- */
+.how-it-works { background-color: #eef2f5; padding: 5rem 0; }
+.steps-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem; align-items: stretch;
+}
+
+.step-card {
+    background: white; padding: 30px 20px; border-radius: 20px;
+    text-align: center; position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: all 0.3s ease;
+    border-bottom: 4px solid transparent; display: flex; flex-direction: column; align-items: center;
+}
+.step-card:hover {
+    transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-bottom-color: var(--gold); 
+}
+
+.step-number {
+    font-size: 3rem; font-weight: 900; color: rgba(0,0,0,0.05); 
+    position: absolute; top: 10px; right: 20px; line-height: 1;
+}
+
+.step-icon {
+    width: 70px; height: 70px; background: var(--primary); color: white;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(0, 92, 169, 0.3);
+    position: relative; z-index: 2;
+}
+
+.step-card h3 { font-size: 1.1rem; color: var(--primary-dark); font-weight: 800; margin-bottom: 10px; text-transform: uppercase; }
+.step-card p { font-size: 0.9rem; color: #666; line-height: 1.6; }
+.step-card p strong { color: var(--primary); }
+
+/* --- QUEM SOMOS --- */
+.about-section { background-color: white; padding: 5rem 0; overflow: hidden; }
+.about-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+
+.about-text p { color: #555; line-height: 1.7; margin-bottom: 20px; font-size: 0.95rem;text-align: justify; }
+.about-text strong { color: var(--primary); font-weight: 700; text-align: justify; }
+
+.about-features { margin: 25px 0; display: flex; flex-direction: column; gap: 15px; text-align: justify;}
+.feature-item { display: flex; align-items: flex-start; gap: 10px; text-align: justify;}
+.feature-item i { color: var(--whatsapp); font-size: 1.2rem; margin-top: 3px; text-align: justify;}
+.feature-item span { font-size: 0.9rem; color: #444; text-align: justify;}
+
+.about-cta {
+    font-size: 1.1rem; font-weight: 800; color: var(--primary-dark) !important;
+    border-left: 4px solid var(--gold); padding-left: 15px; margin-top: 20px; text-align: justify;
+}
+
+.about-images {
+    position: relative; height: 450px; display: flex; justify-content: center; align-items: center;
+}
+.img-main {
+    width: 85%; height: auto; border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2); position: absolute; top: 0; right: 0;
+    z-index: 1; border: 5px solid white;
+}
+.img-secondary {
+    width: 60%; height: auto; border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3); position: absolute; bottom: 20px; left: 0;
+    z-index: 2; border: 5px solid white;
+}
+
+.experience-badge {
+    position: absolute; top: 15%; left: -20px;
+    background: var(--gold-grad); color: white; padding: 15px 25px;
+    border-radius: 15px; box-shadow: 0 10px 20px rgba(243, 146, 0, 0.4);
+    z-index: 3; text-align: center; animation: float 4s ease-in-out infinite;
+}
+.experience-badge .years { display: block; font-size: 2rem; font-weight: 900; line-height: 1; }
+.experience-badge .text { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; }
+
+/* --- OUTRAS SEÇÕES E UTILITÁRIOS --- */
+.mega-boloes-section, .daily-games, .how-it-works, .reviews-section, .about-section, .location-section { padding: 4rem 0; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+.section-title { text-align: center; margin-bottom: 3rem; }
+.section-title h2 { color: var(--primary); font-size: 2rem; font-weight: 800; position: relative; display: inline-block; }
+.section-title h2::after { content: ''; display: block; width: 50px; height: 4px; background: var(--gold); margin: 10px auto 0; border-radius: 2px; }
+
+/* SLIDERS */
+#desktop-games-container, #desktop-mega-container { display: none; }
+#mobile-games-container, #mobile-mega-container { display: block; }
+.swiperJogos, .swiperMega { width: 100%; padding-bottom: 40px; }
+.mobile-slider-view .game-card, .mobile-slider-view .mega-card { width: 280px; } 
+
+/* REVIEWS */
+.reviews-section { background: white; border-top: 1px solid #eee; }
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.review-card { background: var(--gray-light); padding: 25px; border-radius: 10px; border-left: 5px solid var(--gold); transition: transform 0.3s; }
+.review-card:hover { transform: translateX(5px); background: white; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.stars { color: var(--gold); margin-bottom: 10px; }
+.review-card p { font-style: italic; color: #555; margin-bottom: 15px; }
+.review-card strong { color: var(--primary); }
+
+/* LOCATION E FOOTER */
+.location-section { background: var(--gray-light); text-align: center; }
+.map-frame { border-radius: 15px; overflow: hidden; box-shadow: var(--shadow-soft); border: 5px solid white; }
+.address-box { margin-top: 20px; background: white; padding: 20px; border-radius: 10px; display: inline-block; box-shadow: var(--shadow-soft); transition: 0.3s; }
+.address-box:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+.address-box i { font-size: 2rem; color: var(--gold); margin-bottom: 10px; }
+.address-box p { color: #555; font-weight: 500; }
+footer { background: #1a1a1a; color: #888; text-align: center; padding: 2rem; }
+.float-btn { position: fixed; bottom: 20px; right: 20px; background: var(--whatsapp); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 2000; animation: pulse-green 2s infinite; transition: transform 0.3s; }
+.float-btn:hover { transform: scale(1.1); }
+
+/* MODAL */
+.more-info-container { text-align: center; margin-top: 40px; }
+.btn-info-outline {
+    background: rgba(255, 0, 0, 0.555); border: 2px solid red; color: var(--primary);
+    padding: 12px 30px; border-radius: 50px; font-weight: 700; font-size: 0.95rem; cursor: pointer;
+    transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-info-outline:hover { background: var(--primary); color: white; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0, 92, 169, 0.2); }
+
+.info-modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px); z-index: 10000; display: flex; justify-content: center; align-items: center;
+    opacity: 0; visibility: hidden; transition: all 0.3s ease;
+}
+.info-modal-overlay.active { opacity: 1; visibility: visible; }
+.info-modal-content {
+    background: white; width: 90%; max-width: 500px; border-radius: 20px; padding: 30px; position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5); transform: scale(0.8); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-top: 5px solid var(--gold);
+}
+.info-modal-overlay.active .info-modal-content { transform: scale(1); }
+.close-modal { position: absolute; top: 15px; right: 20px; font-size: 1.8rem; cursor: pointer; color: #999; transition: 0.2s; }
+.close-modal:hover { color: var(--primary); }
+.modal-header { text-align: center; margin-bottom: 20px; color: var(--primary); }
+.modal-header i { font-size: 2rem; margin-bottom: 10px; display: block; }
+.modal-header h3 { font-weight: 800; text-transform: uppercase; }
+.modal-body p { font-size: 0.95rem; color: #555; line-height: 1.6; text-align: center; }
+.modal-body strong { color: var(--primary-dark); }
+.modal-divider { border: 0; border-top: 1px solid #eee; margin: 20px 0; }
+.btn-modal-close {
+    background: var(--primary); color: white; width: 100%; padding: 12px; border-radius: 10px;
+    font-weight: 700; margin-top: 25px; transition: 0.2s;
+}
+.btn-modal-close:hover { background: var(--primary-dark); }
+
 
 /* --- MEDIA QUERIES (DESKTOP) --- */
 @media (min-width: 1024px) {
@@ -931,15 +641,21 @@ footer { background: #1a1a1a; color: #888; text-align: center; padding: 2rem; }
         align-items: center;
         gap: 30px;
         text-align: center; 
-        
         max-width: 1400px; 
         margin: 0 auto;    
         padding-left: 0; 
     }
 
     /* FIX: ALINHAMENTO LATERAIS */
-    .hero-center-img { justify-content: flex-end; } 
-    .hero-right-img { justify-content: center; }
+    .hero-center-img { 
+        justify-content: flex-end; 
+        order: initial;
+    } 
+    
+    .hero-right-img { 
+        justify-content: flex-start; /* Alinhamento à esquerda na coluna da direita */
+        padding-left: 20px;
+    }
     
     .hero-glass-card { margin: 0 auto; }
     
@@ -952,6 +668,16 @@ footer { background: #1a1a1a; color: #888; text-align: center; padding: 2rem; }
     .steps-grid {
         grid-template-columns: repeat(5, 1fr); /* FORÇA 5 COLUNAS IGUAIS */
     }
+}
+
+@media (max-width: 1023px) {
+    .about-container { grid-template-columns: 1fr; gap: 3rem; }
+    .about-text { text-align: left; }
+    .about-images { height: 350px; margin-top: 20px; }
+    .img-main { width: 80%; }
+    .img-secondary { width: 60%; bottom: 0; left: 10px; }
+    .experience-badge { left: 0; top: 0; padding: 10px 15px; }
+    .experience-badge .years { font-size: 1.5rem; }
 }
 
 @media (max-width: 768px) {
@@ -984,4 +710,33 @@ footer { background: #1a1a1a; color: #888; text-align: center; padding: 2rem; }
         transform: none;
         font-size: 2.5rem;
     }
+    
+    /* Ajuste Mobile do Botão Verde */
+    .btn-whatsapp-hero-green {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* --- CORREÇÃO DO COVERFLOW (JOGOS DO DIA MOBILE) --- */
+.swiperJogos {
+    padding-top: 10px;
+    padding-bottom: 40px; 
+    perspective: 1000px;
+}
+
+.swiperJogos .swiper-slide {
+    width: 280px !important; /* Tamanho fixo é CRUCIAL para coverflow */
+    opacity: 0.5; 
+    transition: opacity 0.3s;
+}
+
+.swiperJogos .swiper-slide-active {
+    opacity: 1;
+    z-index: 10;
+}
+
+.swiperJogos .game-card {
+    margin: 0 !important; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15); 
 }

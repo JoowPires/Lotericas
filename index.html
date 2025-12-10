@@ -1,356 +1,507 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Lotérica Country Club | Mega da Virada</title>
-    <meta name="theme-color" content="#005CA9">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <meta name="theme-color" content="#005CA9" />
 
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <div id="agePopup" class="age-popup-overlay">
-        <div class="age-popup-content">
-            <h2>Você tem mais de 18 anos?</h2>
-            <div class="age-popup-buttons">
-                <button id="btnNo" class="btn-age btn-no">Não</button>
-                <button id="btnYes" class="btn-age btn-yes">Sim</button>
-            </div>
+      <div class="age-popup-content">
+        <h2>Você tem mais de 18 anos?</h2>
+        <div class="age-popup-buttons">
+          <button id="btnNo" class="btn-age btn-no">Não</button>
+          <button id="btnYes" class="btn-age btn-yes">Sim</button>
         </div>
+      </div>
     </div>
 
     <div id="fixed-header-container">
-        
-        <div class="marquee-swiper-container">
-            <div class="swiper swiperMarquee">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide marquee-slide"><img src="./img/sticker-01.png"> <span>PRÊMIO R$ 850 MILHÕES</span></div>
-                    <div class="swiper-slide marquee-slide"><img src="./img/sticker-02.png"> <span>BOLÃO 12 DEZENAS: R$ 299,82</span></div>
-                    <div class="swiper-slide marquee-slide"><img src="./img/sticker-03.png"> <span>BOLÃO 7 DEZENAS: R$ 56,70</span></div>
-                    <div class="swiper-slide marquee-slide"><img src="./img/sticker-04.png"> <span>BOLÃO 9 DEZENAS: R$ 102,24</span></div>
-                    <div class="swiper-slide marquee-slide"><img src="./img/sticker-05.png"> <span>BOLÃO 10 DEZENAS: R$ 141,75</span></div>
-                    <div class="swiper-slide marquee-slide"><img src="./img/sticker-06.png"> <span>BOLÃO 9 DEZ (EXTRA): R$ 51,41</span></div>
-                    
-                    <div class="swiper-slide marquee-slide"><img src="./img/sticker-01.png"> <span>PRÊMIO R$ 850 MILHÕES</span></div>
-                    <div class="swiper-slide marquee-slide"><img src="./img/sticker-02.png"> <span>BOLÃO 12 DEZENAS: R$ 299,82</span></div>
-                    <div class="swiper-slide marquee-slide"><img src="./img/sticker-03.png"> <span>BOLÃO 7 DEZENAS: R$ 56,70</span></div>
-                    <div class="swiper-slide marquee-slide"><img src="./img/sticker-04.png"> <span>BOLÃO 9 DEZENAS: R$ 102,24</span></div>
-                    <div class="swiper-slide marquee-slide"><img src="./img/sticker-05.png"> <span>BOLÃO 10 DEZENAS: R$ 141,75</span></div>
-                    <div class="swiper-slide marquee-slide"><img src="./img/sticker-06.png"> <span>BOLÃO 9 DEZ (EXTRA): R$ 51,41</span></div>
-                </div>
+      <div class="marquee-swiper-container">
+        <div class="swiper swiperMarquee">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide marquee-slide">
+              <img src="./img/sticker-01.png" />
+              <span>PRÊMIO R$ 850 MILHÕES</span>
             </div>
+            <div class="swiper-slide marquee-slide">
+              <img src="./img/sticker-02.png" />
+              <span>BOLÃO 12 DEZENAS: R$ 299,82</span>
+            </div>
+            <div class="swiper-slide marquee-slide">
+              <img src="./img/sticker-03.png" />
+              <span>BOLÃO 7 DEZENAS: R$ 56,70</span>
+            </div>
+            <div class="swiper-slide marquee-slide">
+              <img src="./img/sticker-04.png" />
+              <span>BOLÃO 9 DEZENAS: R$ 102,24</span>
+            </div>
+            <div class="swiper-slide marquee-slide">
+              <img src="./img/sticker-05.png" />
+              <span>BOLÃO 10 DEZENAS: R$ 141,75</span>
+            </div>
+            <div class="swiper-slide marquee-slide">
+              <img src="./img/sticker-06.png" />
+              <span>BOLÃO 9 DEZ (EXTRA): R$ 51,41</span>
+            </div>
+
+            <div class="swiper-slide marquee-slide">
+              <img src="./img/sticker-01.png" />
+              <span>PRÊMIO R$ 850 MILHÕES</span>
+            </div>
+            <div class="swiper-slide marquee-slide">
+              <img src="./img/sticker-02.png" />
+              <span>BOLÃO 12 DEZENAS: R$ 299,82</span>
+            </div>
+            <div class="swiper-slide marquee-slide">
+              <img src="./img/sticker-03.png" />
+              <span>BOLÃO 7 DEZENAS: R$ 56,70</span>
+            </div>
+            <div class="swiper-slide marquee-slide">
+              <img src="./img/sticker-04.png" />
+              <span>BOLÃO 9 DEZENAS: R$ 102,24</span>
+            </div>
+            <div class="swiper-slide marquee-slide">
+              <img src="./img/sticker-05.png" />
+              <span>BOLÃO 10 DEZENAS: R$ 141,75</span>
+            </div>
+            <div class="swiper-slide marquee-slide">
+              <img src="./img/sticker-06.png" />
+              <span>BOLÃO 9 DEZ (EXTRA): R$ 51,41</span>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <header>
-            <div class="header-content">
-                <div class="logo logo-img-container">
-                    <a href="">
-                    <img src="./img/logo.png" alt="Lotérica Logo" class="new-logo-img">
-                    </a>
-                </div>
-
-                <nav class="desktop-nav">
-                    <a href="#hero">Início</a>
-                    <a href="#mega-boloes">Bolões Mega da Virada</a>
-                    <a href="#daily-games">Jogos do Dia</a>
-                    <a href="#how-it-works">Como Apostar</a>
-                    <a href="#about">Quem Somos</a>
-                </nav>
-
-                <a href="#" class="btn-header btn-whatsapp-geral desktop-only">
-                    <i class="fab fa-whatsapp"></i> <span>Aposte Já</span>
-                </a>
-
-                <button class="mobile-menu-toggle" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </header>
-
-        <div class="mobile-menu-dropdown" id="mobileMenuDropdown">
-            <a href="#hero" class="mobile-link">Início</a>
-            <a href="#mega-boloes" class="mobile-link">Bolões da Virada</a>
-            <a href="#daily-games" class="mobile-link">Jogos do Dia</a>
-            <a href="#how-it-works" class="mobile-link">Como Funciona</a>
-            <a href="#about" class="mobile-link">Quem Somos</a>
-            <a href="#location" class="mobile-link">Localização</a>
-            <a href="#" class="mobile-link highlight btn-whatsapp-geral">
-                <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+      <header>
+        <div class="header-content">
+          <div class="logo logo-img-container">
+            <a href="">
+              <img
+                src="./img/logo.png"
+                alt="Lotérica Logo"
+                class="new-logo-img"
+              />
             </a>
+          </div>
+
+          <nav class="desktop-nav">
+            <a href="#hero">Início</a>
+            <a href="#mega-boloes">Bolões Mega da Virada</a>
+            <a href="#daily-games">Jogos do Dia</a>
+            <a href="#how-it-works">Como Apostar</a>
+            <a href="#about">Quem Somos</a>
+          </nav>
+
+          <a href="#" class="btn-header btn-whatsapp-geral desktop-only">
+            <i class="fab fa-whatsapp"></i> <span>Aposte Já</span>
+          </a>
+
+          <button class="mobile-menu-toggle" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+          </button>
         </div>
-    </div> 
+      </header>
+
+      <div class="mobile-menu-dropdown" id="mobileMenuDropdown">
+        <a href="#hero" class="mobile-link">Início</a>
+        <a href="#mega-boloes" class="mobile-link">Bolões da Virada</a>
+        <a href="#daily-games" class="mobile-link">Jogos do Dia</a>
+        <a href="#how-it-works" class="mobile-link">Como Funciona</a>
+        <a href="#about" class="mobile-link">Quem Somos</a>
+        <a href="#location" class="mobile-link">Localização</a>
+        <a href="#" class="mobile-link highlight btn-whatsapp-geral">
+          <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+        </a>
+      </div>
+    </div>
 
     <section class="hero" id="hero">
-        <div class="hero-container">
-            
-           <div class="hero-right-img">
-    
-    <a href="https://wa.me/5535984544434?text=Quero%20Mega%20da%20Virada" 
-       target="_blank" 
-       class="sticker-link">
-       <img src="/img/unnamed-removebg-preview.png" alt="Compre Aqui" class="floating-sticker">
-       <a href="https://wa.me/5535984544434?text=Olá!%20Quero%20fazer%20meu%20bolão%20agora!" 
-       target="_blank" 
-       class="btn-whatsapp-hero-green">
-       <i class="fab fa-whatsapp"></i>
-       <span>FAÇA SEU BOLÃO</span>
-    </a>
-    </a>
-
-    
-
-</div>
-            
-            <div class="hero-content hero-glass-card">
-                
-                <div class="glass-badge">🏆 O MAIOR DO ANO</div>
-                
-                <h1 class="glass-title">MEGA DA <br><span class="text-gold">VIRADA</span></h1>
-                
-                <div class="glass-body">
-                    <p class="label-premio">PRÊMIO ESTIMADO:</p>
-                    
-                    <div class="price-tag">R$ 850 <small>MILHÕES</small></div>
-                    
-                    <div class="countdown-wrapper">
-                        <div class="time-box"><span id="days">00</span><small>DIAS</small></div>
-                        <div class="sep">:</div>
-                        <div class="time-box"><span id="hours">00</span><small>HRS</small></div>
-                        <div class="sep">:</div>
-                        <div class="time-box"><span id="minutes">00</span><small>MIN</small></div>
-                        <div class="sep">:</div>
-                        <div class="time-box" style="border-color: var(--gold); background: rgba(243, 146, 0, 0.2);"><span id="seconds">00</span><small>SEG</small></div>
-                    </div>
-
-                    <p class="glass-desc">Garanta agora seu bolão estratégico.<br>Não deixe para a última hora!</p>
-                </div>
-
-                <a href="#mega-boloes" class="btn-glass-action">
-                    GARANTIR MEU BOLÃO <i class="fas fa-arrow-right"></i>
-                </a>
-                
-                <div class="glass-security">
-                    <i class="fas fa-shield-alt"></i> Site Verificado e Seguro
-                </div>
-            </div>
-
-            <div class="hero-center-img">
-                <img src="/img/sticker-06.png" alt="Mega da Virada 3D" class="floating-3d-logo">
-            </div>
-
+      <div class="hero-container">
+        <div class="hero-right-img">
+          <a
+            href="https://wa.me/5535984544434?text=Quero%20Mega%20da%20Virada"
+            target="_blank"
+            class="sticker-link"
+          >
+            <img
+              src="/img/unnamed-removebg-preview.png"
+              alt="Compre Aqui"
+              class="floating-sticker"
+            />
+          </a>
         </div>
+
+        <div class="hero-content hero-glass-card">
+          <div class="glass-badge">🏆 O MAIOR DO ANO</div>
+
+          <h1 class="glass-title">
+            MEGA DA <br /><span class="text-gold">VIRADA</span>
+          </h1>
+
+          <div class="glass-body">
+            <p class="label-premio">PRÊMIO ESTIMADO:</p>
+
+            <div class="price-tag">R$ 850 <small>MILHÕES</small></div>
+
+            <div class="countdown-wrapper">
+              <div class="time-box">
+                <span id="days">00</span><small>DIAS</small>
+              </div>
+              <div class="sep">:</div>
+              <div class="time-box">
+                <span id="hours">00</span><small>HRS</small>
+              </div>
+              <div class="sep">:</div>
+              <div class="time-box">
+                <span id="minutes">00</span><small>MIN</small>
+              </div>
+              <div class="sep">:</div>
+              <div
+                class="time-box"
+                style="
+                  border-color: var(--gold);
+                  background: rgba(243, 146, 0, 0.2);
+                "
+              >
+                <span id="seconds">00</span><small>SEG</small>
+              </div>
+            </div>
+
+            <p class="glass-desc">
+              Garanta agora seu bolão estratégico.<br />Não deixe para a última
+              hora!
+            </p>
+          </div>
+
+          <a href="#mega-boloes" class="btn-glass-action">
+            GARANTIR MEU BOLÃO <i class="fas fa-arrow-right"></i>
+          </a>
+
+          <div class="glass-security">
+            <i class="fas fa-shield-alt"></i> Site Verificado e Seguro
+          </div>
+        </div>
+
+        <div class="hero-center-img">
+          <img
+            src="/img/sticker-06.png"
+            alt="Mega da Virada 3D"
+            class="floating-3d-logo"
+          />
+        </div>
+      </div>
     </section>
 
     <section class="mega-boloes-section" id="mega-boloes">
-        <div class="container">
-            <div class="section-title">
-                <h2>✨ Bolões Especiais</h2>
-                <p>Estratégias exclusivas para a Mega da Virada.</p>
-            </div>
-            <div id="desktop-mega-container">
-                <div class="mega-grid" id="mega-boloes-grid"></div>
-            </div>
-            <div id="mobile-mega-container" class="mobile-slider-view">
-                <div class="swiper swiperMega">
-                    <div class="swiper-wrapper" id="swiper-mega-wrapper"></div>
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title">
+          <h2>✨ Bolões Especiais</h2>
+          <p>Estratégias exclusivas para a Mega da Virada.</p>
         </div>
+        <div id="desktop-mega-container">
+          <div class="mega-grid" id="mega-boloes-grid"></div>
+        </div>
+        <div id="mobile-mega-container" class="mobile-slider-view">
+          <div class="swiper swiperMega">
+            <div class="swiper-wrapper" id="swiper-mega-wrapper"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="daily-games" id="daily-games">
-        <div class="container">
-            <div class="section-title">
-                <h2>🎲 Conheça os Jogos</h2>
-                <p>Saiba como funciona cada modalidade.</p>
-            </div>
-            <div id="desktop-games-container">
-                <div class="games-grid" id="daily-games-grid"></div>
-                <div class="view-more-container">
-                    <button id="btn-show-more" class="btn-show-more">Ver Mais Jogos <i class="fas fa-chevron-down"></i></button>
-                </div>
-            </div>
-            <div id="mobile-games-container" class="mobile-slider-view">
-                <div class="swiper swiperJogos">
-                    <div class="swiper-wrapper" id="swiper-daily-wrapper"></div>
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title">
+          <h2>🎲 Conheça os Jogos</h2>
+          <p>Saiba como funciona cada modalidade.</p>
         </div>
+        <div id="desktop-games-container">
+          <div class="games-grid" id="daily-games-grid"></div>
+          <div class="view-more-container">
+            <button id="btn-show-more" class="btn-show-more">
+              Ver Mais Jogos <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+        </div>
+        <div id="mobile-games-container" class="mobile-slider-view">
+          <div class="swiper swiperJogos">
+            <div class="swiper-wrapper" id="swiper-daily-wrapper"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="how-it-works" id="how-it-works">
-        <div class="container">
-            <div class="section-title">
-                <h2>✅ Como Apostar Online?</h2>
-                <p>Siga o passo a passo. É simples, rápido e 100% seguro.</p>
-            </div>
-            
-            <div class="steps-grid">
-                
-                <div class="step-card">
-                    <div class="step-number">01</div>
-                    <div class="step-icon"><i class="fas fa-search"></i></div>
-                    <h3>Escolha o Jogo</h3>
-                    <p>Navegue pelo site e escolha seu <strong>Bolão Estratégico</strong> ou Jogo do Dia favorito.</p>
-                </div>
-
-                <div class="step-card">
-                    <div class="step-number">02</div>
-                    <div class="step-icon"><i class="fab fa-whatsapp"></i></div>
-                    <h3>Clique em Apostar</h3>
-                    <p>Ao clicar no botão, você será direcionado para o nosso <strong>WhatsApp Oficial</strong>.</p>
-                </div>
-
-                <div class="step-card">
-                    <div class="step-number">03</div>
-                    <div class="step-icon"><i class="fas fa-user-check"></i></div>
-                    <h3>Confirmação</h3>
-                    <p>Nossa equipe confirmará os detalhes do seu pedido e o valor total das cotas.</p>
-                </div>
-
-                <div class="step-card">
-                    <div class="step-number">04</div>
-                    <div class="step-icon"><i class="fas fa-qrcode"></i></div>
-                    <h3>Pagamento Pix</h3>
-                    <p>Faça o pagamento via <strong>Pix</strong>. É instantâneo e garantimos a segurança dos seus dados.</p>
-                </div>
-
-                <div class="step-card">
-                    <div class="step-number">05</div>
-                    <div class="step-icon"><i class="fas fa-ticket-alt"></i></div>
-                    <h3>Receba o Bilhete</h3>
-                    <p>Enviamos a <strong>FOTO DO BILHETE ORIGINAL</strong> impresso para você. Agora é só torcer!</p>
-                </div>
-
-            </div>
-
-            <div class="more-info-container">
-                <button id="btnOpenInfo" class="btn-info-outline">
-                    <i class="fas fa-info-circle"></i> Informações sobre Entrega e Segurança
-                </button>
-            </div>
-
+      <div class="container">
+        <div class="section-title">
+          <h2>✅ Como Apostar Online?</h2>
+          <p>Siga o passo a passo. É simples, rápido e 100% seguro.</p>
         </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <div class="step-icon"><i class="fas fa-search"></i></div>
+            <h3>Escolha o Jogo</h3>
+            <p>
+              Navegue pelo site e escolha seu
+              <strong>Bolão Estratégico</strong> ou Jogo do Dia favorito.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <div class="step-icon"><i class="fab fa-whatsapp"></i></div>
+            <h3>Clique em Apostar</h3>
+            <p>
+              Ao clicar no botão, você será direcionado para o nosso
+              <strong>WhatsApp Oficial</strong>.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <div class="step-icon"><i class="fas fa-user-check"></i></div>
+            <h3>Confirmação</h3>
+            <p>
+              Nossa equipe confirmará os detalhes do seu pedido e o valor total
+              das cotas.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">04</div>
+            <div class="step-icon"><i class="fas fa-qrcode"></i></div>
+            <h3>Pagamento Pix</h3>
+            <p>
+              Faça o pagamento via <strong>Pix</strong>. É instantâneo e
+              garantimos a segurança dos seus dados.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">05</div>
+            <div class="step-icon"><i class="fas fa-ticket-alt"></i></div>
+            <h3>Receba o Bilhete</h3>
+            <p>
+              Enviamos a <strong>FOTO DO BILHETE ORIGINAL</strong> impresso para
+              você. Agora é só torcer!
+            </p>
+          </div>
+        </div>
+
+        <div class="more-info-container">
+          <button id="btnOpenInfo" class="btn-info-outline">
+            <strong>ATENÇÃO!!</strong>
+            <i class="fas fa-info-circle"></i> Informações sobre Entrega e
+            Segurança
+          </button>
+        </div>
+      </div>
     </section>
 
     <section class="reviews-section" id="reviews">
-        <div class="container">
-            <div class="section-title"><h2>⭐ Clientes Satisfeitos</h2></div>
-            <div class="reviews-grid">
-                <div class="review-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Atendimento com carinho,rapidez e segurança!
-Parabéns às atendentes!
-Eu e minha esposa somos idosos(eu 69 e ela 71) optamos sempre em enfrentar as filas os os atendimentos são bem rápidos."</p><strong>ALTAIR & ÍRIS</strong></div>
-                <div class="review-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Atendimento rápido e colaboradores super educadas."</p><strong>
-Romildo Sousa</strong></div>
-                <div class="review-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Confiança total."</p><strong>Marcos Oliveira</strong></div>
+      <div class="container">
+        <div class="section-title"><h2>⭐ Clientes Satisfeitos</h2></div>
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
             </div>
+            <p>
+              "Atendimento com carinho,rapidez e segurança! Parabéns às
+              atendentes! Eu e minha esposa somos idosos(eu 69 e ela 71) optamos
+              sempre em enfrentar as filas os os atendimentos são bem rápidos."
+            </p>
+            <strong>ALTAIR & ÍRIS</strong>
+          </div>
+          <div class="review-card">
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </div>
+            <p>"Atendimento rápido e colaboradores super educadas."</p>
+            <strong> Romildo Sousa</strong>
+          </div>
+          <div class="review-card">
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </div>
+            <p>"Confiança total."</p>
+            <strong>Marcos Oliveira</strong>
+          </div>
         </div>
+      </div>
     </section>
 
     <section class="about-section" id="about">
-        <div class="container about-container">
-            
-            <div class="about-text">
-                <div class="section-title" style="text-align: left; margin-bottom: 20px;">
-                    <h2>🏢 Quem Somos</h2>
-                    <p style="margin: 0;">Sejam Bem-Vindos!</p>
-                </div>
+      <div class="container about-container">
+        <div class="about-text">
+          <div
+            class="section-title"
+            style="text-align: left; margin-bottom: 20px"
+          >
+            <h2>🏢 Quem Somos</h2>
+            <p style="margin: 0">Sejam Bem-Vindos!</p>
+          </div>
 
-                <p>
-                    Somos a <strong>Lotérica MG Toda Sorte LTDA</strong>. Credenciada oficialmente pela <strong>CAIXA ECONÔMICA FEDERAL</strong>, através do convênio nº 11022106-0, desde Agosto de 2012.
-                </p>
+          <p>
+            Somos a <strong>Lotérica MG Toda Sorte LTDA</strong>. Credenciada
+            oficialmente pela <strong>CAIXA ECONÔMICA FEDERAL</strong> desde
+            Agosto de 2012, através do convênio nº 11022106-0.
+          </p>
 
-                <p>
-                    Temos como <strong>MISSÃO</strong> a eficiência e transparência nos atendimentos transacionais, negociais e jogos de loterias CAIXA.
-                </p>
+          <p>
+            Temos como <strong>MISSÃO</strong> a eficiência e transparência nos
+            atendimentos transacionais, negociais e jogos de loterias CAIXA.
+          </p>
 
-                <p>
-                    Estamos localizados junto às belezas naturais da cidade de <strong>Poços de Caldas</strong>, envoltos pelas belíssimas montanhas e águas termais da região. Queremos lhe atender na forma <strong>PRESENCIAL</strong> ou pelo canal <strong>DIGITAL</strong>. O que mais lhe trazer conforto e segurança.
-                </p>
+          <p>
+            Estamos localizados junto às belezas naturais da cidade de
+            <strong>Poços de Caldas</strong>, envoltos pelas belíssimas
+            montanhas e águas termais da região. Queremos lhe atender na forma
+            <strong>PRESENCIAL</strong> ou por este canal <strong>DIGITAL</strong>.
+            O que mais lhe trazer conforto e segurança.
+          </p>
 
-                <div class="about-features">
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span><strong>Bolões Oficiais:</strong> Jogos exclusivos preparados diariamente.</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span><strong>Jogos Estratégicos:</strong> Opções com mais números e desdobramentos.</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span><strong>Atendimento Personalizado:</strong> Faça suas combinações com a gente.</span>
-                    </div>
-                </div>
-
-                <p class="about-cta">
-                    Vamos buscar juntos os <strong>PRÊMIOS MILIONÁRIOS</strong> dos sorteios da CAIXA!
-                </p>
+          <div class="about-features">
+            <div class="feature-item">
+              <i class="fas fa-check-circle"></i>
+              <span
+                ><strong>Bolões Oficiais:</strong> Jogos exclusivos preparados
+                diariamente.</span
+              >
             </div>
-
-            <div class="about-images">
-                <img src="foto-loterica-1.jpg" alt="Fachada da Lotérica" class="img-main">
-                
-                <img src="foto-loterica-2.jpg" alt="Interior da Lotérica" class="img-secondary">
-                
-                <div class="experience-badge">
-                    <span class="years">13+</span>
-                    <span class="text">Anos de<br>Tradição</span>
-                </div>
+            <div class="feature-item">
+              <i class="fas fa-check-circle"></i>
+              <span
+                ><strong>Jogos Estratégicos:</strong> Opções com mais números e
+                desdobramentos.</span
+              >
             </div>
+            <div class="feature-item">
+              <i class="fas fa-check-circle"></i>
+              <span
+                ><strong>Atendimento Personalizado:</strong> Faça suas
+                combinações com a gente.</span
+              >
+            </div>
+          </div>
 
+          <p class="about-cta">
+            Vamos buscar juntos os <strong>PRÊMIOS MILIONÁRIOS</strong> dos
+            sorteios da CAIXA!
+          </p>
         </div>
+
+        <div class="about-images">
+          <div class="experience-badge">
+            <span class="years">13+</span>
+            <span class="text">Anos de<br />Tradição</span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="location-section" id="location">
-        <div class="container">
-            <div class="section-title"><h2>📍 Onde Estamos</h2><p>Venha nos fazer uma visita.</p></div>
-            <div class="location-wrapper">
-                <div class="map-frame"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2202.860949971495!2d-46.6016972692401!3d-21.789712069319528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c9db7bd166f701%3A0x15911311652c3187!2sLot%C3%A9rica%20Country%20Club!5e0!3m2!1spt-BR!2sbr!4v1765333955780!5m2!1spt-BR!2sbr" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
-                <div class="address-box"><i class="fas fa-map-marker-alt"></i><p>Av. Monsenhor Alderige, 242 - Jardim Country Club, Poços de Caldas - MG, 37704-284</p></div>
-            </div>
+      <div class="container">
+        <div class="section-title">
+          <h2>📍 Onde Estamos</h2>
+          <p>Venha nos fazer uma visita.</p>
         </div>
+        <div class="location-wrapper">
+          <div class="map-frame">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2202.860949971495!2d-46.6016972692401!3d-21.789712069319528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c9db7bd166f701%3A0x15911311652c3187!2sLot%C3%A9rica%20Country%20Club!5e0!3m2!1spt-BR!2sbr!4v1765333955780!5m2!1spt-BR!2sbr"
+              width="100%"
+              height="400"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="address-box">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>
+              Av. Monsenhor Alderige, 242 - Jardim Country Club, Poços de Caldas
+              - MG, 37704-284
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <footer>
-        <p>Razão social (MG TODA SORTE ltda). <br>Nome fantasia (LOTERICA COUNTRY CLUB) <br>Canal digital ( www.LOTERIABOLAODASORTE.COM.BR) <br> © 2025 Lotérica Country Club. Jogue com responsabilidade. Credenciada Oficial CAIXA. Convênio n. 11022106-0</p>
+      <p>
+        Razão social (MG TODA SORTE ltda). <br />Nome fantasia (LOTERICA COUNTRY
+        CLUB) <br />Canal digital ( www.LOTERIABOLAODASORTE.COM.BR) <br />
+        © 2025 Lotérica Country Club. Jogue com responsabilidade. Credenciada
+        Oficial CAIXA. Convênio n. 11022106-0
+      </p>
     </footer>
 
-    <a href="#" class="float-btn btn-whatsapp-geral"><i class="fab fa-whatsapp"></i></a>
+    <a href="#" class="float-btn btn-whatsapp-geral"
+      ><i class="fab fa-whatsapp"></i
+    ></a>
 
     <div id="infoModal" class="info-modal-overlay">
-        <div class="info-modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-header">
-                <i class="fas fa-lock"></i>
-                <h3>Segurança e Entrega</h3>
-            </div>
-            <div class="modal-body">
-                <p>
-                    Sua(as) cota(s) de bolão(oes), irão constar os dados do pagador do PIX (nome e CPF) no verso do bilhete e ficará guardado em nosso <strong>COFRE</strong>. 
-                    <br><br>
-                    Você receberá a foto com os dados registrados para sua conferência e segurança.
-                </p>
-                <hr class="modal-divider">
-                <p>
-                    Se preferir poderá retirar seu jogo em nossa <strong>loja física</strong> ou podemos enviar via <strong>CORREIOS</strong> para o endereço indicado, via postal com registro de rastreio.
-                    <br>
-                    <em>"Custas pelo cliente".</em>
-                </p>
-            </div>
-            <button class="btn-modal-close" id="btnCloseModalBtn">Entendi</button>
+      <div class="info-modal-content">
+        <span class="close-modal">×</span>
+        <div class="modal-header">
+          <i class="fas fa-lock"></i>
+          <h3>Segurança e Entrega</h3>
         </div>
+        <div class="modal-body">
+          <p>
+            Sua(as) cota(s) de bolão(oes), irão constar os dados do pagador do
+            PIX (nome e CPF) no verso do bilhete e ficará guardado em nosso
+            <strong>COFRE</strong>. <br /><br />
+            Você receberá a foto com os dados registrados para sua conferência e
+            segurança.
+          </p>
+          <hr class="modal-divider" />
+          <p>
+            Se preferir poderá retirar seu jogo em nossa
+            <strong>loja física</strong> ou podemos enviar via
+            <strong>CORREIOS</strong> para o endereço indicado, via postal com
+            registro de rastreio.
+            <br />
+            <em>"Custas pelo cliente".</em>
+          </p>
+        </div>
+        <button class="btn-modal-close" id="btnCloseModalBtn">Entendi</button>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
