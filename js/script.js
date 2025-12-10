@@ -1,13 +1,13 @@
 // --- CONFIGURAÇÕES GERAIS ---
-const whatsappNumber = "5511999999999"; // Coloque seu número aqui (apenas números)
+const whatsappNumber = "+5535984544434"; // Coloque seu número aqui (apenas números)
 
 // --- DADOS DOS BOLÕES (MEGA DA VIRADA) ---
 const megaSyndicates = [
-    { id: 1, desc: "3 Apostas de 12 Dezenas", valor: 299.82, premio: "R$ 600 MILHÕES", cotas: 75 },
-    { id: 2, desc: "10 Apostas de 7 Dezenas", valor: 56.70, premio: "R$ 600 MILHÕES", cotas: 10 },
-    { id: 3, desc: "3 Apostas de 9 Dezenas", valor: 102.24, premio: "R$ 600 MILHÕES", cotas: 20 },
-    { id: 4, desc: "2 Apostas de 10 Dezenas", valor: 141.75, premio: "R$ 600 MILHÕES", cotas: 24 },
-    { id: 5, desc: "3 Apostas de 9 Dezenas (Extra)", valor: 51.41, premio: "R$ 600 MILHÕES", cotas: 40 }
+    { id: 1, desc: "3 Apostas de 12 Dezenas", valor: 299.82, premio: "R$ 850 MILHÕES", cotas: 75 },
+    { id: 2, desc: "10 Apostas de 7 Dezenas", valor: 56.70, premio: "R$ 850 MILHÕES", cotas: 10 },
+    { id: 3, desc: "3 Apostas de 9 Dezenas", valor: 102.24, premio: "R$ 850 MILHÕES", cotas: 20 },
+    { id: 4, desc: "2 Apostas de 10 Dezenas", valor: 141.75, premio: "R$ 850 MILHÕES", cotas: 24 },
+    { id: 5, desc: "3 Apostas de 9 Dezenas (Extra)", valor: 51.41, premio: "R$ 850 MILHÕES", cotas: 40 }
 ];
 
 // --- DADOS DOS JOGOS DO DIA (COM TAGS E DIAS) ---
@@ -49,7 +49,7 @@ const dailyGames = [
         howTo: "Com o mesmo bilhete, você concorre em <strong>dois sorteios</strong> seguidos. Mais chances de ganhar." 
     },
     { 
-        name: "Timemania", color: "#8bc34a", textColor: "#004528", 
+        name: "Timemania", color: "#FFF20B", textColor: "#004528", 
         tag: "Paixão pelo Time",
         days: ["Ter", "Qui", "Sáb"],
         howTo: "Escolha 10 números e um <strong>Time do Coração</strong>. Sorteiam-se 7 números por concurso." 
@@ -61,7 +61,7 @@ const dailyGames = [
         howTo: "Escolha de 7 a 15 números e um <strong>Mês de Sorte</strong>. Sorteios três vezes por semana." 
     },
     { 
-        name: "Super Sete", color: "#d9d9d9", textColor: "#333", 
+        name: "Super Sete", color: "#89C052", textColor: "#333", 
         tag: "Colunas da Sorte",
         days: ["Seg", "Qua", "Sex"],
         howTo: "Escolha no mínimo 1 número em cada uma das <strong>7 colunas</strong> disponíveis." 
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateAllLinks(); 
     }
 
-    // 4. RENDERIZAR JOGOS DO DIA (PREMIUM - CORRIGIDO)
+    // 4. RENDERIZAR JOGOS DO DIA (PREMIUM)
     const dailyDesktop = document.getElementById('daily-games-grid');
     const dailyMobileWrapper = document.getElementById('swiper-daily-wrapper');
     
@@ -228,6 +228,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 6. INICIA O CRONÔMETRO
     startCountdown();
+
+    // 7. MODAL DE INFORMAÇÕES (ENTREGA E SEGURANÇA)
+    const modalInfo = document.getElementById('infoModal');
+    const btnOpenInfo = document.getElementById('btnOpenInfo');
+    const btnCloseModal = document.querySelector('.close-modal');
+    const btnCloseModalBtn = document.getElementById('btnCloseModalBtn');
+
+    if (btnOpenInfo && modalInfo) {
+        // Abrir
+        btnOpenInfo.addEventListener('click', (e) => {
+            e.preventDefault();
+            modalInfo.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Trava a rolagem
+        });
+
+        // Fechar (X, Botão ou Clicar Fora)
+        const closeModal = () => {
+            modalInfo.classList.remove('active');
+            document.body.style.overflow = ''; // Destrava rolagem
+        };
+
+        if(btnCloseModal) btnCloseModal.addEventListener('click', closeModal);
+        if(btnCloseModalBtn) btnCloseModalBtn.addEventListener('click', closeModal);
+        
+        modalInfo.addEventListener('click', (e) => {
+            if (e.target === modalInfo) closeModal();
+        });
+    }
 });
 
 // --- FUNÇÕES AUXILIARES ---
