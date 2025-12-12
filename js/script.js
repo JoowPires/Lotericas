@@ -1,6 +1,6 @@
 // --- CONFIGURAÇÕES GERAIS ---
 const whatsappNumber = "+5535984544434"; // Coloque seu número aqui (apenas números)
-const whatsappNumber2 = "+5535991164728"; // Coloque seu número aqui (apenas números)
+const whatsappNumber2 = "5535991164728"; // Coloque seu número aqui (apenas números)
 
 // --- DADOS DOS BOLÕES (MEGA DA VIRADA) ---
 const megaSyndicates = [
