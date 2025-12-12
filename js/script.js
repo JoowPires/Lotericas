@@ -1,5 +1,6 @@
 // --- CONFIGURAÇÕES GERAIS ---
 const whatsappNumber = "+5535984544434"; // Coloque seu número aqui (apenas números)
+const whatsappNumber2 = "+5535991164728"; // Coloque seu número aqui (apenas números)
 
 // --- DADOS DOS BOLÕES (MEGA DA VIRADA) ---
 const megaSyndicates = [
@@ -194,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p>${game.howTo}</p>
                 </div>
 
-                <a href="https://wa.me/${whatsappNumber}?text=Olá! Quero apostar na *${game.name}*." 
+                <a href="https://wa.me/${whatsappNumber2}?text=Olá! Quero apostar na *${game.name}*." 
                    class="btn-game-action" 
                    style="--btn-color: ${game.color}">
                    <i class="fab fa-whatsapp"></i> Apostar Agora
@@ -279,7 +280,7 @@ function changeQty(cardId, unitPrice, change) {
 function updateLink(btn, qty, total) {
     const baseMsg = btn.getAttribute('data-base-msg');
     const finalMsg = `${baseMsg}\n\n*Qtd:* ${qty}\n*Total:* ${total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`;
-    btn.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(finalMsg)}`;
+    btn.href = `https://wa.me/${whatsappNumber2}?text=${encodeURIComponent(finalMsg)}`;
 }
 
 function updateAllLinks() {
