@@ -8,7 +8,7 @@ const megaSyndicates = [
     { id: 3, desc: "3 Apostas de 9 Dezenas", valor: 102.24, premio: "R$ 850 MILHÕES", cotas: 20 },
     { id: 4, desc: "2 Apostas de 10 Dezenas", valor: 141.75, premio: "R$ 850 MILHÕES", cotas: 24 },
     { id: 5, desc: "3 Apostas de 9 Dezenas ", valor: 51.41, premio: "R$ 850 MILHÕES", cotas: 40 },
-    { id: 6, desc: "200 Apostas de 6 Dezenas ", valor: 324.00, premio: "R$ 850 MILHÕES", cotas: 5 }
+    { id: 6, desc: "200 Apostas de 6 Dezenas ", valor: 270.00, premio: "R$ 850 MILHÕES", cotas: 6 }
 ];
 
 // --- DADOS DOS JOGOS DO DIA (COM TAGS E DIAS) ---
