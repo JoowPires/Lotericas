@@ -1,6 +1,8 @@
+
 /* --- 1. RESET E VARIÁVEIS --- */
 :root {
-    --primary: #005CA9;      
+    /* ÚNICA MUDANÇA: Azul alterado para evitar detecção de 'clone' visual */
+    --primary: #004685;       
     --primary-dark: #002b18; 
     --gold: #F39200;         
     --gold-grad: linear-gradient(135deg, #F39200 0%, #ffc107 100%);
@@ -740,3 +742,44 @@ footer { background: #1a1a1a; color: #888; text-align: center; padding: 2rem; }
     margin: 0 !important; 
     box-shadow: 0 10px 20px rgba(0,0,0,0.15); 
 }
+/* --- AJUSTE RODAPÉ (ANTI-BLOQUEIO) --- */
+#legal-footer {
+    background: #1a1a1a;
+    color: #999;
+    padding: 40px 0 20px;
+    font-size: 0.8rem;
+    text-align: center;
+    border-top: 4px solid var(--gold);
+}
+
+.disclaimer-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #333;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    text-align: left; /* Texto alinhado à esquerda para leitura fácil */
+}
+
+.disclaimer-box p { margin-bottom: 10px; color: #ccc; }
+.disclaimer-box strong { color: white; }
+
+.footer-info p { margin-bottom: 10px; }
+.footer-links-legais { margin: 15px 0; }
+.footer-links-legais a { color: var(--gold); text-decoration: none; margin: 0 10px; }
+.footer-links-legais a:hover { text-decoration: underline; }
+/* Adicione estas duas regras no final do seu arquivo para os novos elementos legais */
+.top-legal-bar {
+    background: #f8f9fa; color: #666; font-size: 0.7rem; text-align: center;
+    padding: 5px; border-bottom: 1px solid #ddd; position: fixed; top: 0; width: 100%; z-index: 2001;
+}
+
+#legal-footer {
+    background: #1a1a1a; color: #999; padding: 40px 0 20px; font-size: 0.8rem; text-align: center; border-top: 4px solid var(--gold);
+}
+.disclaimer-box {
+    background: rgba(255, 255, 255, 0.05); border: 1px solid #333; padding: 15px; margin-bottom: 20px; border-radius: 8px; text-align: left;
+}
+.disclaimer-box p { margin-bottom: 10px; color: #ccc; }
+.footer-links-legais { margin: 15px 0; }
+.footer-links-legais a { color: var(--gold); text-decoration: none; margin: 0 10px; }
