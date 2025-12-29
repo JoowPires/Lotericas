@@ -633,13 +633,13 @@ header {
 .premio-label {
     display: block;
     font-size: 0.8rem; font-weight: 800; letter-spacing: 2px;
-    color: #002b18; margin-bottom: 5px; text-transform: uppercase;
+    color: #1a1f2e; margin-bottom: 5px; text-transform: uppercase;
     opacity: 0.8;
 }
 
 .premio-valor {
     display: block;
-    font-size: 2.4rem; font-weight: 900; color: #002b18; 
+    font-size: 2.4rem; font-weight: 900; color: #1a1f2e;
     line-height: 1; text-shadow: 0 1px 2px rgba(255,255,255,0.4);
 }
 
@@ -656,7 +656,7 @@ header {
 }
 
 .cotas-info {
-    font-size: 0.85rem; color: #002b18; background: #FFD700;
+    font-size: 0.85rem; color: #1a1f2e; background: #f8b739;
     padding: 6px 15px; border-radius: 50px; display: inline-block;
     font-weight: 700; margin: 0 auto; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
@@ -675,7 +675,7 @@ header {
 }
 .btn-qty {
     width: 38px; height: 38px; border-radius: 50%;
-    background: white; color: #002b18; font-weight: 800; font-size: 1.4rem;
+    background: white; color: #1a1f2e; font-weight: 800; font-size: 1.4rem;
     border: none; display: flex; align-items: center; justify-content: center;
     transition: all 0.2s; cursor: pointer;
 }
@@ -687,13 +687,13 @@ header {
 }
 
 .total-display { font-size: 0.9rem; color: #ddd; margin-bottom: 5px; font-weight: 600; }
-.total-value { color: #FFD700; font-weight: 800; }
+.total-value { color: #f8b739; font-weight: 800; }
 
 .btn-mega {
     display: flex; justify-content: center; align-items: center; gap: 10px;
     width: 100%; padding: 16px;
     background: linear-gradient(90deg, #F39200 0%, #ffc107 100%);
-    color: #002b18; border-radius: 50px; font-weight: 800; text-transform: uppercase;
+    color: #1a1f2e; border-radius: 50px; font-weight: 800; text-transform: uppercase;
     margin-top: auto; transition: 0.3s; box-shadow: 0 4px 15px rgba(243, 146, 0, 0.4);
     animation: pulse-green 2s infinite; text-decoration: none;
 }
